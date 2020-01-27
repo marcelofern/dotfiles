@@ -35,10 +35,12 @@ for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>
 # monitors
 #set $Mon1 HDMI1
 
-
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # gaps
 gaps inner 15
