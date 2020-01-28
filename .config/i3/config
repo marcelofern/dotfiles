@@ -41,10 +41,12 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# add extra space for polybar
 
 # gaps
 gaps inner 15
 gaps outer 5
+gaps top 50
 
 # back to default gaps
 bindsym $Mod+t gaps inner current set 15; gaps outer current set 15

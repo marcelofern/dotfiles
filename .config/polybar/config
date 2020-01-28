@@ -25,6 +25,71 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
+[common]
+height = 27
+offset-y = 1%
+padding = 1
+padding-right = 1
+line-size = 2
+border-size = 1
+border-color = ${colors.primary}
+background = ${colors.background}
+foreground = ${colors.foreground}
+radius = 0.0
+override-redirect = true
+wm-restack = i3
+
+[bar/left]
+modules-left = bspwm i3
+width = 20%
+offset-x = 3%
+height = ${common.height}
+offset-y = ${common.offset-y}
+padding = ${common.padding}
+padding-right = ${common.padding-right}
+line-size = ${common.line-size}
+border-size = ${common.border-size}
+border-color = ${common.border-color}
+background = ${common.background}
+foreground = ${common.foreground}
+radius = ${common.radius}
+override-redirect = ${common.override-redirect}
+wm-restack = ${common.wm-restack}
+
+[bar/center]
+modules-center = date
+width = 20%
+offset-x = 40%
+height = ${common.height}
+offset-y = ${common.offset-y}
+padding = ${common.padding}
+padding-right = ${common.padding-right}
+line-size = ${common.line-size}
+border-size = ${common.border-size}
+border-color = ${common.border-color}
+background = ${common.background}
+foreground = ${common.foreground}
+radius = ${common.radius}
+override-redirect = ${common.override-redirect}
+wm-restack = ${common.wm-restack}
+
+[bar/right]
+modules-center = battery cpu
+width = 20%
+offset-x = 77%
+height = ${common.height}
+offset-y = ${common.offset-y}
+padding = ${common.padding}
+padding-right = ${common.padding-right}
+line-size = ${common.line-size}
+border-size = ${common.border-size}
+border-color = ${common.border-color}
+background = ${common.background}
+foreground = ${common.foreground}
+radius = ${common.radius}
+override-redirect = ${common.override-redirect}
+wm-restack = ${common.wm-restack}
+
 [bar/example]
 width = 100%
 height = 27

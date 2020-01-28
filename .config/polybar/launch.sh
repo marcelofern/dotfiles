@@ -5,5 +5,6 @@ killall -q polybar
 
 # Launch bar
 echo "---" | tee -a /tmp/polybar.log
-polybar example >> /tmp/polybar.log 2>&1 &
-echo "Bars launched ..."
+polybar left >> /tmp/polybar-left.log 2>&1 &
+polybar center >> /tmp/polybar-center.log 2>&1 &
+polybar right >> /tmp/polybar-right.log 2>&1 &
