@@ -49,7 +49,7 @@ gaps outer 5
 gaps top 50
 
 # back to default gaps
-bindsym $Mod+t gaps inner current set 15; gaps outer current set 15
+bindsym $Mod+t gaps inner current set 15; gaps outer current set 15; gaps top current set 50;
 bindsym $Mod+Shift+t gaps inner current set 0; gaps outer current set 0
 
 # change gaps
