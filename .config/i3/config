@@ -33,7 +33,7 @@ client.background 	$bg
 for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
 
 # monitors
-#set $Mon1 HDMI1
+set $Mon1 HDMI1
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -95,6 +95,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec termite
 
+# start firefox
+bindsym $mod+w exec firefox
+
 # START BINDINGS CONFIG
 
 # kill focused window
@@ -138,7 +141,6 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating

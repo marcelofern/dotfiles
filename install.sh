@@ -11,7 +11,7 @@
 #  cp /etc/X11/xinit/xinitrc ~/.xinitrc and remove the xterm lines and add "exec i3"
 
 # General dependencies.
-sudo pacman -S i3-gaps xorg-server xorg-xinit zsh neovim dmenu 
+sudo pacman -S i3-gaps xorg-server xorg-xinit xorg-xrandr zsh neovim dmenu 
                git termite openssh base-devel
 
 # Fonts
