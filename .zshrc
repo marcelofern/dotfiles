@@ -25,6 +25,7 @@ export EDITOR='nvim'
 KEYTIMEOUT=1  # Fixes slow <esc> in vim
 stty -ixon # don't disturbe when CTRL+S and CTRL+Q
 stty sane # avoid tmux going crazy
+bindkey -v # vim mode
 
 ############ - Aliases - ############
 alias vim='nvim'

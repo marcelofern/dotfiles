@@ -2,3 +2,4 @@
 */
 !.config/
 !.zshrc
+!.xinitrc
