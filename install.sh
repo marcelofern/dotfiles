@@ -38,6 +38,7 @@ cd ~
 # AUR dependencies
 yay polybar
 yay ttf-google-fonts-typewolf
+yay ttf-material-design-icons
 yay pamac-aur
 yay python-pip
 
