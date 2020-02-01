@@ -41,7 +41,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-# add extra space for polybar
+
+# Nitrogen
+exec_always --no-startup-id nitrogen --restore
 
 # gaps
 gaps inner 15

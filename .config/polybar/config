@@ -34,6 +34,7 @@ font-1 = "siji:pixelsize=12;1"
 foreground = ${colors.foreground}
 height = 27
 line-size = 0
+module-margin-right = 2
 offset-y = 1%
 override-redirect = true
 padding = 1
@@ -42,7 +43,7 @@ radius = 0.0
 wm-restack = i3
 
 [bar/left]
-modules-left = bspwm i3
+modules-left = i3
 offset-x = 3%
 width = 20%
 
@@ -55,6 +56,7 @@ font-1 = ${common.font-1}
 foreground = ${common.foreground}
 height = ${common.height}
 line-size = ${common.line-size}
+module-margin-right = ${common.module-margin-right}
 offset-y = ${common.offset-y}
 override-redirect = ${common.override-redirect}
 padding = ${common.padding}
@@ -76,6 +78,7 @@ font-1 = ${common.font-1}
 foreground = ${common.foreground}
 height = ${common.height}
 line-size = ${common.line-size}
+module-margin-right = ${common.module-margin-right}
 offset-y = ${common.offset-y}
 override-redirect = ${common.override-redirect}
 padding = ${common.padding}
@@ -84,7 +87,7 @@ radius = ${common.radius}
 wm-restack = ${common.wm-restack}
 
 [bar/right]
-modules-center = battery cpu
+modules-center = battery cpu memory
 width = 20%
 offset-x = 77%
 
@@ -97,6 +100,7 @@ font-1 = ${common.font-1}
 foreground = ${common.foreground}
 height = ${common.height}
 line-size = ${common.line-size}
+module-margin-right = ${common.module-margin-right}
 offset-y = ${common.offset-y}
 override-redirect = ${common.override-redirect}
 padding = ${common.padding}
@@ -104,102 +108,9 @@ padding-right = ${common.padding-right}
 radius = ${common.radius}
 wm-restack = ${common.wm-restack}
 
-[module/xwindow]
-label = %title:0:30:...%
-type = internal/xwindow
-
-[module/xkeyboard]
-blacklist-0 = num lock
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-type = internal/xkeyboard
-
-[module/filesystem]
-interval = 25
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-mount-0 = /
-type = internal/fs
-
-[module/bspwm]
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-label-occupied = %index%
-label-occupied-padding = 2
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-type = internal/bspwm
-
-[module/i3]
-format = <label-state> <label-mode>
-index-sort = true
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-label-unfocused = %index%
-label-unfocused-padding = 2
-label-urgent = %index%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-type = internal/i3
-wrapping-scroll = false
-
-[module/mpd]
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-label-song-maxlen = 25
-label-song-ellipsis = true
-type = internal/mpd
-
-[module/xbacklight]
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-width = 10
-format = <label> <bar>
-label = BL
-type = internal/xbacklight
-
-[module/backlight-acpi]
-card = intel_backlight
-inherit = module/xbacklight
-type = internal/backlight
-
 [module/cpu]
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.primary}
 format-underline = #f90000
 interval = 2
 label = %percentage:2%%
@@ -208,41 +119,16 @@ type = internal/cpu
 [module/memory]
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.primary}
 format-underline = #4bffdc
 type = internal/memory
 label = %percentage_used%%
-
-[module/wlan]
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-format-disconnected =
-interface = net1
-interval = 3.0
-label-connected = %essid%
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-type = internal/network
-
-[module/eth]
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-format-disconnected =
-interface = enp0s3
-interval = 3.0
-label-connected = %local_ip%
-type = internal/network
 
 [module/date]
 date =
 date-alt = " %Y-%m-%d"
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.primary}
 format-underline = #0a6cf5
 interval = 5
 label = %date% %time%
@@ -304,12 +190,12 @@ adapter = AC
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.primary}
 animation-charging-framerate = 750
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-foreground = ${colors.primary}
 animation-discharging-framerate = 750
 battery = BAT0
 format-charging = <animation-charging> <label-charging>
@@ -317,13 +203,13 @@ format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.primary}
 format-full-underline = ${self.format-charging-underline}
 full-at = 98
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.primary}
 type = internal/battery
 
 [module/temperature]
@@ -342,28 +228,27 @@ thermal-zone = 0
 type = internal/temperature
 warn-temperature = 60
 
-[module/powermenu]
-expand-right = true
-format-spacing = 1
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-type = custom/menu
+[module/i3]
+format = <label-state> <label-mode>
+index-sort = true
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+label-unfocused = %index%
+label-unfocused-padding = 2
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+type = internal/i3
+wrapping-scroll = false
 
 [settings]
 screenchange-reload = true
