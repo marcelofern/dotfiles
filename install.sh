@@ -32,6 +32,8 @@ yay siji
 yay pamac-aur
 yay python-pip
 yay pywal
+yay flameshot
+yay peek
 
 # Zsh as shell (You will have to restart the computer to take effect)
 chsh -l

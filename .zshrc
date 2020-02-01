@@ -39,7 +39,9 @@ alias termiterc="vim ~/.config/termite/config"
 alias rofirc="vim ~/.config/rofi/config.rasi"
 alias brightdown="xbacklight -dec 10"
 alias brightup="xbacklight -inc 10"
-alias wifi=nmtui
+alias wifi="nmtui"
+alias ss="flameshot gui"
+alias record="peek"
 alias update="source ~/.zshrc"
 
 clear
