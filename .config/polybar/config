@@ -54,7 +54,7 @@ wm-restack = i3
 
 [bar/left]
 modules-left = i3
-modules-right = pulseaudio
+modules-right = filesystem pulseaudio
 offset-x = 3%
 width = 20%
 
@@ -136,9 +136,18 @@ interval = 2
 format-prefix =  
 format-prefix-foreground = ${colors.neutral-red}
 format-underline = #4bffdc
-type = internal/memory
 label = %percentage_used%%
 label-foreground = ${colors.gray}
+type = internal/memory
+
+[module/filesystem]
+interval = 25
+label-mounted = %{F#689d6a}%mountpoint%%{F-}: %{F#928374}%percentage_used%%%{F-}
+label-unmounted = %mountpoint% not mounted
+label-mounted-foreground = ${colors.gray}
+label-unmounted-foreground = ${colors.gray}
+mount-0 = /
+type = internal/fs
 
 [module/date]
 date =
