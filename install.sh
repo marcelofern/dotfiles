@@ -12,10 +12,10 @@
 
 # General dependencies.
 sudo pacman -S i3-gaps xorg-server xorg-xinit xorg-xrandr xorg-xbacklight zsh neovim dmenu 
-sudo pacman -S git termite openssh base-devel nitrogen
+sudo pacman -S git termite openssh base-devel nitrogen alsa-utils pulseaudio
 
 # Fonts
-sudo pacman -S ttf-dejavu noto-fonts ttf-liberation ttf-hack 
+sudo pacman -S ttf-dejavu noto-fonts ttf-liberation ttf-hack ttf-font-awesome
 sudo pacman -S ttf-linux-libertine noto-fonts-emoji font-mathematica ttf-croscore
 
 # Polybar dependencies.

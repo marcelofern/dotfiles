@@ -30,11 +30,13 @@ background = ${colors.background}
 border-color = ${colors.primary}
 border-size = 1
 font-0 = "Noto Sans:size=11;1"
-font-1 = "siji:pixelsize=12;1"
+font-1 = "siji:pixelsize=15;1"
+;https://cdn.materialdesignicons.com/4.8.95/
+font-2 = "Material Design Icons:size=12;1"
 foreground = ${colors.foreground}
 height = 27
 line-size = 0
-module-margin-right = 2
+module-margin-right = 5
 offset-y = 1%
 override-redirect = true
 padding = 1
@@ -43,7 +45,7 @@ radius = 0.0
 wm-restack = i3
 
 [bar/left]
-modules-left = i3
+modules-left = i3 pulseaudio
 offset-x = 3%
 width = 20%
 
@@ -53,6 +55,7 @@ border-color = ${common.border-color}
 border-size = ${common.border-size}
 font-0 = ${common.font-0}
 font-1 = ${common.font-1}
+font-2 = ${common.font-2}
 foreground = ${common.foreground}
 height = ${common.height}
 line-size = ${common.line-size}
@@ -75,6 +78,7 @@ border-color = ${common.border-color}
 border-size = ${common.border-size}
 font-0 = ${common.font-0}
 font-1 = ${common.font-1}
+font-2 = ${common.font-2}
 foreground = ${common.foreground}
 height = ${common.height}
 line-size = ${common.line-size}
@@ -97,6 +101,7 @@ border-color = ${common.border-color}
 border-size = ${common.border-size}
 font-0 = ${common.font-0}
 font-1 = ${common.font-1}
+font-2 = ${common.font-2}
 foreground = ${common.foreground}
 height = ${common.height}
 line-size = ${common.line-size}
@@ -109,7 +114,7 @@ radius = ${common.radius}
 wm-restack = ${common.wm-restack}
 
 [module/cpu]
-format-prefix = " "
+format-prefix =  CPU
 format-prefix-foreground = ${colors.primary}
 format-underline = #f90000
 interval = 2
@@ -118,7 +123,7 @@ type = internal/cpu
 
 [module/memory]
 interval = 2
-format-prefix = " "
+format-prefix =  
 format-prefix-foreground = ${colors.primary}
 format-underline = #4bffdc
 type = internal/memory
@@ -127,7 +132,7 @@ label = %percentage_used%%
 [module/date]
 date =
 date-alt = " %Y-%m-%d"
-format-prefix = 
+format-prefix = 肋
 format-prefix-foreground = ${colors.primary}
 format-underline = #0a6cf5
 interval = 5
@@ -187,14 +192,14 @@ type = internal/alsa
 
 [module/battery]
 adapter = AC
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 󰋏
+animation-charging-1 = 󰋐
+animation-charging-2 = 󰋑
 animation-charging-foreground = ${colors.primary}
 animation-charging-framerate = 750
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = 󰋎
+animation-discharging-1 = 󰋍
+animation-discharging-2 = 󰋌
 animation-discharging-foreground = ${colors.primary}
 animation-discharging-framerate = 750
 battery = BAT0
@@ -202,13 +207,13 @@ format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
-format-full-prefix = " "
+format-full-prefix = 
 format-full-prefix-foreground = ${colors.primary}
 format-full-underline = ${self.format-charging-underline}
-full-at = 98
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+full-at = 99
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.primary}
 type = internal/battery
 

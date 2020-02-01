@@ -37,6 +37,7 @@ alias polybarrc="vim ~/.config/polybar/config"
 alias termiterc="vim ~/.config/termite/config"
 alias brightdown="xbacklight -dec 10"
 alias brightup="xbacklight -inc 10"
+alias wifi=nmtui
 alias update="source ~/.zshrc"
 
 clear
