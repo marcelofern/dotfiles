@@ -12,7 +12,7 @@
 
 # General dependencies.
 sudo pacman -S i3-gaps xorg-server xorg-xinit xorg-xrandr xorg-xbacklight zsh neovim dmenu 
-sudo pacman -S git termite openssh base-devel
+sudo pacman -S git termite openssh base-devel nitrogen
 
 # Fonts
 sudo pacman -S ttf-dejavu noto-fonts ttf-liberation ttf-hack 
@@ -39,6 +39,7 @@ cd ~
 yay polybar
 yay ttf-google-fonts-typewolf
 yay ttf-material-design-icons
+yay siji
 yay pamac-aur
 yay python-pip
 
