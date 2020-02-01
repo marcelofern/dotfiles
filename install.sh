@@ -12,7 +12,7 @@
 
 # General dependencies.
 sudo pacman -S i3-gaps xorg-server xorg-xinit xorg-xrandr xorg-xbacklight zsh neovim dmenu 
-sudo pacman -S git termite openssh base-devel nitrogen alsa-utils pulseaudio
+sudo pacman -S git termite openssh base-devel nitrogen alsa-utils pulseaudio htop
 
 # Fonts
 sudo pacman -S ttf-dejavu noto-fonts ttf-liberation ttf-hack ttf-font-awesome
@@ -56,6 +56,11 @@ sudo pip install --upgrade neovim
 sudo pip install --upgrade jedi
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Building colors
+sudo pacman -S imagemagick
+yay pywal
+wal --theme base16-gruvbox-soft
 
 
 # Prevent modificiations from installation process to change the repo.

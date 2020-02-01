@@ -26,6 +26,7 @@ KEYTIMEOUT=1  # Fixes slow <esc> in vim
 stty -ixon # don't disturbe when CTRL+S and CTRL+Q
 stty sane # avoid tmux going crazy
 bindkey -v # vim mode
+(cat ~/.cache/wal/sequences &)  # load wal theming
 
 ############ - Aliases - ############
 alias vim='nvim'

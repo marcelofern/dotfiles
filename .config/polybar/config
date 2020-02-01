@@ -17,17 +17,25 @@
 ;==========================================================
 
 [colors]
+; https://github.com/morhetz/gruvbox-contrib/blob/master/color.table
 alert = #bd2c40
 background = #222
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #ffb52a
+gray = #928374
+light-soft = #f2e5bc
+neutral-aqua = #689d6a
+neutral-green = #98971a
+neutral-orange = #d65d0e
+neutral-purple = #b16286
+neutral-red = #cc241d
+neutral-yellow = #d79921
 secondary = #e60053
 
 [common]
 background = ${colors.background}
-border-color = ${colors.primary}
+border-color = ${colors.gray}
 border-size = 1
 font-0 = "Noto Sans:size=11;1"
 font-1 = "siji:pixelsize=15;1"
@@ -45,7 +53,8 @@ radius = 0.0
 wm-restack = i3
 
 [bar/left]
-modules-left = i3 pulseaudio
+modules-left = i3
+modules-right = pulseaudio
 offset-x = 3%
 width = 20%
 
@@ -59,7 +68,7 @@ font-2 = ${common.font-2}
 foreground = ${common.foreground}
 height = ${common.height}
 line-size = ${common.line-size}
-module-margin-right = ${common.module-margin-right}
+module-margin-right = ${common.module-margin-right
 offset-y = ${common.offset-y}
 override-redirect = ${common.override-redirect}
 padding = ${common.padding}
@@ -91,7 +100,7 @@ radius = ${common.radius}
 wm-restack = ${common.wm-restack}
 
 [bar/right]
-modules-center = battery cpu memory
+modules-center = battery cpu memory temperature
 width = 20%
 offset-x = 77%
 
@@ -114,44 +123,40 @@ radius = ${common.radius}
 wm-restack = ${common.wm-restack}
 
 [module/cpu]
-format-prefix =  CPU
-format-prefix-foreground = ${colors.primary}
+format-prefix =  
+format-prefix-foreground = ${colors.neutral-green}
 format-underline = #f90000
 interval = 2
 label = %percentage:2%%
+label-foreground = ${colors.gray}
 type = internal/cpu
 
 [module/memory]
 interval = 2
 format-prefix =  
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = ${colors.neutral-red}
 format-underline = #4bffdc
 type = internal/memory
 label = %percentage_used%%
+label-foreground = ${colors.gray}
 
 [module/date]
 date =
-date-alt = " %Y-%m-%d"
-format-prefix = 肋
-format-prefix-foreground = ${colors.primary}
+date-alt = " %A"
+format-prefix = 
+format-prefix-foreground = ${colors.neutral-purple}
 format-underline = #0a6cf5
 interval = 5
 label = %date% %time%
+label-foreground = ${colors.gray}
 type = internal/date
-time = %H:%M
-time-alt = %H:%M:%S
+time = %a %I:%M %p
+time-alt = %H:%M
 
 [module/pulseaudio]
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-indicator = 
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
@@ -159,48 +164,26 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
-label-volume-foreground = ${root.foreground}
-label-muted = 🔇 muted
-label-muted-foreground = #666
+format-volume-prefix = 
+format-volume-prefix-padding = 1
+format-volume-prefix-foreground = ${colors.neutral-yellow}
+label-volume =  %percentage%%
+label-volume-foreground = ${colors.gray} 
+label-muted = 
+label-muted-foreground = ${colors.neutral-red}
 type = internal/pulseaudio
 
-[module/alsa]
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-label-muted = sound muted
-type = internal/alsa
-
 [module/battery]
-adapter = AC
+adapter = ADP
 animation-charging-0 = 󰋏
 animation-charging-1 = 󰋐
 animation-charging-2 = 󰋑
-animation-charging-foreground = ${colors.primary}
+animation-charging-foreground = ${colors.neutral-yellow}
 animation-charging-framerate = 750
 animation-discharging-0 = 󰋎
 animation-discharging-1 = 󰋍
 animation-discharging-2 = 󰋌
-animation-discharging-foreground = ${colors.primary}
+animation-discharging-foreground = ${colors.neutral-yellow}
 animation-discharging-framerate = 750
 battery = BAT0
 format-charging = <animation-charging> <label-charging>
@@ -208,13 +191,16 @@ format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 format-full-prefix = 
-format-full-prefix-foreground = ${colors.primary}
+format-full-prefix-foreground = ${colors.neutral-yellow}
 format-full-underline = ${self.format-charging-underline}
-full-at = 99
+full-at = 100
+label-charging-foreground = ${colors.gray}
+label-discharging-foreground = ${colors.gray}
+label-foreground = ${colors.gray}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.primary}
+ramp-capacity-foreground = ${colors.neutral-yellow}
 type = internal/battery
 
 [module/temperature]
@@ -223,12 +209,16 @@ format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 label = %temperature-c%
+label-foreground = ${colors.gray}
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+label-warn-foreground = ${colors.neutral-red}
+ramp-0 = 󰃮
+ramp-1 = 󰃮
+ramp-2= 󰃮
+ramp-3= 󰃮
+ramp-4= 󰃮
+ramp-5 = 󰃭
+ramp-foreground = ${colors.neutral-orange}
 thermal-zone = 0
 type = internal/temperature
 warn-temperature = 60
@@ -237,12 +227,13 @@ warn-temperature = 60
 format = <label-state> <label-mode>
 index-sort = true
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-background = ${colors.gray}
+label-focused-underline= ${colors.gray}
+label-focused-foreground = ${colors.light-soft}
 label-focused-padding = 2
 label-mode-padding = 2
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-background = ${colors.neutral-yellow}
 label-unfocused = %index%
 label-unfocused-padding = 2
 label-urgent = %index%
