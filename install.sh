@@ -7,7 +7,7 @@
 # General dependencies.
 sudo pacman -S i3-gaps xorg-server xorg-xinit xorg-xrandr xorg-xbacklight zsh neovim dmenu 
 sudo pacman -S git termite openssh base-devel nitrogen alsa-utils pulseaudio htop neofetch
-sudo pacman -S xf86-video-intel imagemagick
+sudo pacman -S xf86-video-intel imagemagick rofi
 
 # Fonts
 sudo pacman -S ttf-dejavu noto-fonts ttf-liberation ttf-hack ttf-font-awesome

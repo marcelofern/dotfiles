@@ -36,6 +36,7 @@ alias tmuxrc="vim ~/.tmux.conf"
 alias i3rc="vim ~/.config/i3/config"
 alias polybarrc="vim ~/.config/polybar/config"
 alias termiterc="vim ~/.config/termite/config"
+alias rofirc="vim ~/.config/rofi/config.rasi"
 alias brightdown="xbacklight -dec 10"
 alias brightup="xbacklight -inc 10"
 alias wifi=nmtui
