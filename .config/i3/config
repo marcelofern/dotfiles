@@ -2,8 +2,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!!
 
 # $Mod = Super or Alt?
-set $mod Mod4
-#set $mod Mod1
+#set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -106,6 +106,9 @@ bindsym $mod+d exec --no-startup-id \
   {cmd}; read -n 1 -s\\"'"
 
 # START BINDINGS CONFIG
+
+# log out
+bindsym $mod+x exec i3lock -i ~/Wallpapers/mountain-png.png
 
 # kill focused window
 bindsym $mod+Shift+q kill
