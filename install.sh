@@ -8,6 +8,7 @@
 sudo pacman -S i3-gaps xorg-server xorg-xinit xorg-xrandr xorg-xbacklight zsh neovim dmenu 
 sudo pacman -S git termite openssh base-devel nitrogen alsa-utils pulseaudio htop neofetch
 sudo pacman -S xf86-video-intel imagemagick rofi xorg-xev bluez bluez-utils i3lock which
+sudo pacman -S tree
 
 # Fonts
 sudo pacman -S ttf-dejavu noto-fonts ttf-liberation ttf-hack ttf-font-awesome
@@ -34,10 +35,7 @@ yay python-pip
 yay pywal
 yay flameshot
 yay peek
-
-# Zsh as shell (You will have to restart the computer to take effect)
-chsh -l
-chsh -s $(which zsh) $(whoami)
+yay tty-clock
 
 # Oh my zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -54,6 +52,10 @@ wal --theme base16-gruvbox-soft
 
 # generate ssh key
 ssh-keygen
+
+# Zsh as shell (You will have to restart the computer to take effect)
+chsh -l
+chsh -s $(which zsh) $(whoami)
 
 # Prevent modificiations from installation process to change the repo.
 git checkout .
