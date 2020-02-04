@@ -50,10 +50,13 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 
 echo "Downloading neovim dependencies"
 sudo pacman -S ack ripgrep
-sudo pip install --upgrade neovim
-sudo pip install --upgrade jedi
+sudo pip install --upgrade jedi pynvim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo "Downloading dev dependencies"
+sudo pacman -S docker docker-compose postgres
+sudo pip install --upgrade virtualenv
 
 echo "Applying gruvbox color schema"
 wal --theme base16-gruvbox-soft
