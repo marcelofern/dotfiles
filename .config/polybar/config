@@ -183,7 +183,9 @@ label-muted-foreground = ${colors.neutral-red}
 type = internal/pulseaudio
 
 [module/battery]
-adapter = ADP
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+adapter = AC0
 animation-charging-0 = 󰋏
 animation-charging-1 = 󰋐
 animation-charging-2 = 󰋑
@@ -202,10 +204,12 @@ format-discharging-underline = ${self.format-charging-underline}
 format-full-prefix = 
 format-full-prefix-foreground = ${colors.neutral-yellow}
 format-full-underline = ${self.format-charging-underline}
-full-at = 100
+full-at = 88
 label-charging-foreground = ${colors.gray}
 label-discharging-foreground = ${colors.gray}
 label-foreground = ${colors.gray}
+label-full = Full
+label-full-foreground = ${colors.gray}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
