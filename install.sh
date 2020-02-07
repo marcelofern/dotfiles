@@ -12,7 +12,8 @@ sudo pacman -S \
   nitrogen alsa-utils pulseaudio \
   htop neofetch xf86-video-intel \
   imagemagick rofi xorg-xev bluez \
-  bluez-utils i3lock which tree
+  bluez-utils i3lock which tree \
+  xorg-xset firefox
 
 echo "Downloading fonts..."
 sudo pacman -S \
