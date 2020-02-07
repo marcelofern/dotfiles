@@ -8,4 +8,4 @@
 !pictures/
 .config/QtProject.conf
 !post-install.sh
-!insta..sh
+!install.sh

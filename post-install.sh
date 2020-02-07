@@ -14,3 +14,6 @@ nitrogen ~/Wallpapers
 
 # set the terminal theme
 wal --theme base16-gruvbox-soft
+
+# create a ~/.ssh folder.
+ssh-keygen
