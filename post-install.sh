@@ -7,6 +7,7 @@ cp -rf ~/dotfiles/.xinitrc ~/.xinitrc
 cp -rf ~/dotfiles/.zshrc ~/.zshrc
 cp -rf ~/dotfiles/.config ~/.config
 cp -rf ~/dotfiles/.git ~/.git
+cp -rf ~/dotfiles/.gitignore ~/.gitignore
 
 # set the wallpaper
 nitrogen ~/Wallpapers
