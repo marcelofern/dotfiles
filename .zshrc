@@ -44,6 +44,7 @@ alias ss="flameshot gui"
 alias record="peek"
 alias update="source ~/.zshrc"
 
+# The user can override .zshrc_private with some custom things.
 source ~/.zshrc_private
 
 clear
