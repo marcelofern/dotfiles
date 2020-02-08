@@ -44,4 +44,6 @@ alias ss="flameshot gui"
 alias record="peek"
 alias update="source ~/.zshrc"
 
+source ~/.zshrc_private
+
 clear
