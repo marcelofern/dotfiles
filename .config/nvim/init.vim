@@ -210,7 +210,7 @@ map _ :vertical resize 85<CR>
 
 
 " -------------- COPYING TO CLIPBOARD POSSIBILITY -----------
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 " -------------- SAVING AND CLOSING CONFIGURATION ----------
 
 

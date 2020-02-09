@@ -13,7 +13,7 @@ sudo pacman -S \
   htop neofetch xf86-video-intel \
   imagemagick rofi xorg-xev bluez \
   bluez-utils i3lock which tree \
-  xorg-xset firefox
+  xorg-xset firefox xclip
 
 echo "Downloading fonts..."
 sudo pacman -S \
