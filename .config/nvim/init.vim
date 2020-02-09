@@ -96,12 +96,12 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 
 " -------------- YOU COMPLETE ME AUTO COMPLETION (PYTHON) CONFIG --------------
-"let g:ycm_goto_buffer_command = 'vertical-split'
-"nnoremap <F10> :YcmCompleter GoToDeclaration<CR>
-"nnoremap <F12> :YcmCompleter GoToDefinition<CR>
-"nnoremap <F9> :YcmCompleter GoToReferences<CR>
-"let g:ycm_server_keep_logfiles = 1
-"let g:ycm_server_log_level = 'debug'
+let g:ycm_goto_buffer_command = 'vertical-split'
+nnoremap <F10> :YcmCompleter GoToDeclaration<CR>
+nnoremap <F12> :YcmCompleter GoToDefinition<CR>
+nnoremap <F9> :YcmCompleter GoToReferences<CR>
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
 " -------------- YOU COMPLETE ME  AUTO COMPLETION (PYTHON) CONFIG --------------
 
 

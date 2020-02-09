@@ -34,6 +34,11 @@ for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>
 
 # monitors
 set $Mon1 HDMI1
+#set $Mon2 HDMI2
+
+# Mirrors to laptop to HDMI
+#exec --no-startup-id xrandr --output HDMI1 --auto
+exec --no-startup-id xrandr --output HDMI2 --auto
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
