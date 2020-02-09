@@ -102,8 +102,8 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec termite
 
-# start firefox
-bindsym $mod+w exec firefox
+# start web browser
+bindsym $mod+w exec google-chrome-stable --disable-gpu
 
 # start rofi
 bindsym $mod+d exec --no-startup-id \
@@ -214,10 +214,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym l resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt

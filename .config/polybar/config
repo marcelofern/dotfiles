@@ -185,7 +185,7 @@ type = internal/pulseaudio
 [module/battery]
 ; Use the following command to list batteries and adapters:
 ; $ ls -1 /sys/class/power_supply/
-adapter = AC0
+adapter = AC
 animation-charging-0 = 󰋏
 animation-charging-1 = 󰋐
 animation-charging-2 = 󰋑
@@ -204,7 +204,7 @@ format-discharging-underline = ${self.format-charging-underline}
 format-full-prefix = 
 format-full-prefix-foreground = ${colors.neutral-yellow}
 format-full-underline = ${self.format-charging-underline}
-full-at = 88
+full-at = 98
 label-charging-foreground = ${colors.gray}
 label-discharging-foreground = ${colors.gray}
 label-foreground = ${colors.gray}
