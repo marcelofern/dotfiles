@@ -31,6 +31,7 @@ Plug 'kh3phr3n/python-syntax'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'lepture/vim-jinja'
+Plug 'majutsushi/tagbar'
 
 " All Plugs must be added before the following line
 call plug#end()
