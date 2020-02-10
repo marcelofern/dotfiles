@@ -14,7 +14,7 @@ DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 SIMPL_ZSH_DIR=$HOME/.zsh
-plugins=(git)
+plugins=(git globalias)
 source $ZSH/oh-my-zsh.sh
 
 ############ - User configuration - ############
