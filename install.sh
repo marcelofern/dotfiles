@@ -59,7 +59,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Downloading dev dependencies"
-sudo pacman -S docker docker-compose postgresql openvpn
+sudo pacman -S docker docker-compose postgresql openvpn openconnect
 sudo systemctl start docker && systemctl enable docker
 sudo pip install --upgrade virtualenv
 
