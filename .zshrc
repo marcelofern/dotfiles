@@ -42,6 +42,7 @@ alias brightup="xbacklight -inc 10"
 alias wifi="nmtui"
 alias ss="flameshot && flameshot gui"
 alias record="peek"
+alias usb="udiskctl mount -b"  # Mounts an usb: usb /dev/sdb1
 alias update="source ~/.zshrc"
 
 # The user can override .zshrc_private with some custom things.
