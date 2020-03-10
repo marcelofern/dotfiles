@@ -14,7 +14,7 @@ sudo pacman -S \
   imagemagick rofi xorg-xev bluez \
   bluez-utils i3lock which tree \
   xorg-xset firefox xclip udisks2 \
-  tmux unzip zip
+  tmux unzip zip nodejs npm
 
 echo "Downloading fonts..."
 sudo pacman -S \
@@ -55,6 +55,7 @@ sudo pacman -S ack ripgrep
 sudo pip install --upgrade jedi pynvim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sudo npm install -g eslint  # Linter for javascript
 
 echo "Downloading dev dependencies"
 sudo pacman -S docker docker-compose postgresql openvpn openconnect

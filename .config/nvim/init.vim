@@ -18,6 +18,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 "Plug 'Valloric/YouCompleteMe', { 'do': 'make' }
 Plug 'jnurmine/Zenburn'
+Plug 'dense-analysis/ale'
 Plug 'altercation/vim-colors-solarized'
 Plug 'aonemd/kuroi.vim'
 Plug 'morhetz/gruvbox'
@@ -233,6 +234,15 @@ au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm,*.jinja,*.jinja2 set ft=jinja
 " -------------- TAGBAR CONFIG ----------- "
 noremap <F8> :TagbarToggle<CR>
 " -------------- END TAGBAR CONFIG----------
+
+
+" -------------- ALE CONFIG ----------- "
+"let b:ale_linters = {'javascript': ['eslint']}
+let b:ale_linters = ['eslint']
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
+" -------------- END ALE CONFIG----------
 
 
 " -------------- PYTHON DEBUG CONFIG ----------- "
