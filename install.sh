@@ -14,7 +14,7 @@ sudo pacman -S \
   imagemagick rofi xorg-xev bluez \
   bluez-utils i3lock which tree \
   xorg-xset firefox xclip udisks2 \
-  tmux
+  tmux unzip zip
 
 echo "Downloading fonts..."
 sudo pacman -S \
@@ -50,9 +50,6 @@ yay vim-youcompleteme-git
 yay google-chrome
 yay universal-ctags-git  # dependency for tagbar vim
 
-echo "Downloading oh my zsh"
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 echo "Downloading neovim dependencies"
 sudo pacman -S ack ripgrep
 sudo pip install --upgrade jedi pynvim
@@ -73,3 +70,7 @@ ssh-keygen
 echo "Using zsh as a shell. Note: Restart your computer to take effect"
 chsh -l
 chsh -s $(which zsh) $(whoami)
+
+echo "Downloading oh my zsh"
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
