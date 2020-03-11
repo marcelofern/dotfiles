@@ -47,17 +47,28 @@ let mapleader=","
 
 " -------------- IDENTENTATION CONFIG --------------
 set encoding=utf-8
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
 set textwidth=0 wrapmargin=0
 set colorcolumn=79
 
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set expandtab |   "convert tabs to spaces
-    \ set autoindent |
-    \ set fileformat=unix
+"au BufNewFile,BufRead *.py
+    "\ set tabstop=4 |
+    "\ set softtabstop=4 |
+    "\ set shiftwidth=4 |
+    "\ set expandtab |   "convert tabs to spaces
+    "\ set autoindent |
+    "\ set fileformat=unix
+au FileType python
+    \ setlocal tabstop=4 |
+    \ setlocal softtabstop=4 |
+    \ setlocal shiftwidth=4 |
+    \ setlocal expandtab |   "convert tabs to spaces
+    \ setlocal autoindent |
+    \ setlocal fileformat=unix
 " -------------- END OF IDENTENTATION CONFIG --------------
 
 
