@@ -44,8 +44,8 @@ alias ss="flameshot && flameshot gui"
 alias record="peek"
 alias usb="udiskctl mount -b"  # Mounts an usb: usb /dev/sdb1
 alias update="source ~/.zshrc"
+alias hdmi="xrandr --output HDMI1 --mode 1920x1080"
 
 # The user can override .zshrc_private with some custom things.
 source ~/.zshrc_private
-
 clear
