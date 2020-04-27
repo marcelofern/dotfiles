@@ -96,6 +96,10 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " -------------- END FLAGGING UNNECESSARY WHITE SPACE CONFIG --------------
 
+" -------------- START SPELLING AND GRAMMAR CHECK --------------
+nnoremap <F6> :setlocal spell! spelllang=en_us<CR>
+" -------------- END SPELLING AND GRAMMAR CHECK --------------
+
 
 " -------------- JEDI AUTO COMPLETION (PYTHON) CONFIG --------------
 "set omnifunc=jedi#completions
