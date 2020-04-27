@@ -45,6 +45,8 @@ alias record="peek"
 alias usb="udiskctl mount -b"  # Mounts an usb: usb /dev/sdb1
 alias update="source ~/.zshrc"
 alias hdmi="xrandr --output HDMI1 --mode 1920x1080"
+alias mirrors="sudo nvim /etc/pacman.d/mirrorlist"
+alias svg="feh --conversion-timeout 1"
 
 # The user can override .zshrc_private with some custom things.
 source ~/.zshrc_private
