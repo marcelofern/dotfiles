@@ -14,7 +14,8 @@ sudo pacman -S \
   imagemagick rofi xorg-xev bluez \
   bluez-utils i3lock which tree \
   xorg-xset firefox xclip udisks2 \
-  tmux unzip zip nodejs npm
+  tmux unzip zip nodejs npm \
+  v4l-utils
 
 echo "Downloading fonts..."
 sudo pacman -S \

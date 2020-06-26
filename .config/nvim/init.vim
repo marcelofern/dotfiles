@@ -169,6 +169,9 @@ noremap <silent> <Leader>cu :<C-B>silent <C-E>s/^\(\s*\)\V<C-R>=escape(b:comment
 " -------------- SEARCH CONFIGURATION --------------
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_use_caching = 0
+let g:ctrlp_prompt_mappings = {
+  \  'PrtInsert("c")': ['<MiddleMouse>', '<insert>', '<c-v>'] }
 "highligh search
 :set hlsearch
 let g:ackhighlight=1
@@ -176,7 +179,7 @@ set ignorecase
 set smartcase     " ignore case if search pattern is all lowercase,
 "Ack configs"
 cnoreabbrev ack Ack!
-let g:ackpreview=1
+let g:ackpreview=0
 let g:ackprg = 'rg -S --vimgrep --no-heading'
 let g:ack_mappings = {
       \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
