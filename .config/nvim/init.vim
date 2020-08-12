@@ -16,7 +16,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
-"Plug 'Valloric/YouCompleteMe', { 'do': 'make' }
+"Plug 'Valloric/YouCompleteMe', { 'do': 'make' } grab from arch linux package
 Plug 'jnurmine/Zenburn'
 Plug 'dense-analysis/ale'
 Plug 'altercation/vim-colors-solarized'
@@ -33,6 +33,7 @@ Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'lepture/vim-jinja'
 Plug 'majutsushi/tagbar'
+Plug 'easymotion/vim-easymotion'
 
 " All Plugs must be added before the following line
 call plug#end()
@@ -274,3 +275,11 @@ let g:notes_directories = ['~/Documents/Notes']
 let g:notes_suffix = '.txt'
 let g:notes_list_bullets = ['-', '+']
 " -------------- END NOTES CONFIG---------"
+"
+" --------------- EASY MOTION CONFIG ------------"
+nmap <Leader><leader>f <Plug>(easymotion-overwin-f)
+nmap <Leader><leader>F <Plug>(easymotion-overwin-F)
+nmap <Leader><leader>w <Plug>(easymotion-overwin-w)
+nmap <Leader><leader>W <Plug>(easymotion-overwin-W)
+nmap <Leader><leader>. <Plug>(easymotion-repeat)
+" --------------- END EASY MOTION CONFIG ------------"
