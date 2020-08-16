@@ -13,7 +13,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'gmarik/Vundle.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 "Plug 'Valloric/YouCompleteMe', { 'do': 'make' } grab from arch linux package
@@ -34,6 +34,9 @@ Plug 'xolox/vim-misc'
 Plug 'lepture/vim-jinja'
 Plug 'majutsushi/tagbar'
 Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/goyo.vim'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'vimwiki/vimwiki'
 
 " All Plugs must be added before the following line
 call plug#end()
@@ -74,15 +77,21 @@ au FileType python
 " -------------- END OF IDENTENTATION CONFIG --------------
 
 
-" -------------- CURSOR HIGHLIGHT CONFIG --------------
+" -------------- CURSOR CONFIG --------------
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=black
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
+" vertically center doc when inserting
+autocmd InsertEnter * norm zz
 " -------------- END OF CURSOR HIGHLIGHT CONFIG --------------
 
+" -------------- INDENTATION CONFIG ----------------
+vmap < <gv
+vmap > >gv
+" -------------- END INDENTATION CONFIG ----------------
 
 " -------------- CODE FOLD CONFIG --------------
 " hit the space bar to fold code.
@@ -283,3 +292,21 @@ nmap <Leader><leader>w <Plug>(easymotion-overwin-w)
 nmap <Leader><leader>W <Plug>(easymotion-overwin-W)
 nmap <Leader><leader>. <Plug>(easymotion-repeat)
 " --------------- END EASY MOTION CONFIG ------------"
+
+" --------------- GOYO CONFIG ------------"
+noremap <leader>go :Goyo<CR>
+" --------------- END GOYO CONFIG ------------"
+
+
+" --------------- HEXOKINASE CONFIG ------------"
+let g:Hexokinase_optInPatterns = [
+\     'full_hex',
+\     'triple_hex',
+\     'rgb',
+\     'rgba',
+\     'hsl',
+\     'hsla',
+\     'colour_names'
+\ ]
+let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript', 'less']
+" --------------- END HEXOKINASE CONFIG ------------"

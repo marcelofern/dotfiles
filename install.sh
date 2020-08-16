@@ -50,6 +50,7 @@ yay tty-clock
 yay vim-youcompleteme-git
 yay google-chrome
 yay universal-ctags-git  # dependency for tagbar vim
+yay redshift  # screen warmth
 
 echo "Downloading neovim dependencies"
 sudo pacman -S ack ripgrep
@@ -75,4 +76,3 @@ chsh -s $(which zsh) $(whoami)
 
 echo "Downloading oh my zsh"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-

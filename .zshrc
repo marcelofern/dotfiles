@@ -49,6 +49,7 @@ alias mirrors="sudo nvim /etc/pacman.d/mirrorlist"
 alias svg="feh --conversion-timeout 1"
 alias audio="pavucontrol"  # To select a sound device when casting
 alias video="qv4l2"  # To set up webcan config
+alias warm="redshift -P &"
 
 # The user can override .zshrc_private with some custom things.
 source ~/.zshrc_private
