@@ -13,24 +13,13 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'gmarik/Vundle.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
-" Plug 'davidhalter/jedi-vim'
-Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
-"Plug 'Valloric/YouCompleteMe', { 'do': 'make' } grab from arch linux package
-Plug 'jnurmine/Zenburn'
-Plug 'dense-analysis/ale'
-Plug 'altercation/vim-colors-solarized'
-Plug 'aonemd/kuroi.vim'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'neomake/neomake'
 Plug 'tpope/vim-fugitive'
-Plug 'kh3phr3n/python-syntax'
-Plug 'xolox/vim-notes'
-Plug 'xolox/vim-misc'
 Plug 'lepture/vim-jinja'
 Plug 'majutsushi/tagbar'
 Plug 'easymotion/vim-easymotion'
@@ -85,7 +74,7 @@ set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
 " vertically center doc when inserting
-autocmd InsertEnter * norm zz
+" autocmd InsertEnter * norm zz
 " -------------- END OF CURSOR HIGHLIGHT CONFIG --------------
 
 " -------------- INDENTATION CONFIG ----------------
@@ -146,10 +135,7 @@ set background=dark
 let g:gruvbox_contrast_light = 'hard'
 let g:gruvbox_contrast_dark = 'soft'
 let g:gruvbox_italicize_strings = 1
-"colorscheme kuroi
 colorscheme gruvbox
-"colorscheme solarized
-"colorscheme zenburn
 " -------------- END COLOR SCHEMAS --------------
 
 
@@ -264,31 +250,17 @@ noremap <F8> :TagbarToggle<CR>
 " -------------- END TAGBAR CONFIG----------
 
 
-" -------------- ALE CONFIG ----------- "
-"let b:ale_linters = {'javascript': ['eslint']}
-let b:ale_linters = ['eslint']
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_enter = 0
-" -------------- END ALE CONFIG----------
-
-
 " -------------- PYTHON DEBUG CONFIG ----------- "
 noremap <F1> :normal oimport ipdb; ipdb.set_trace()<ESC>
 noremap <F2> :g/^.*import ipdb; ipdb.set_trace().*/d<CR>
 " -------------- END PYTHON DEBUG  CONFIG----------
 
 
-" -------------- NOTES CONFIG-------------"
-let g:notes_directories = ['~/Documents/Notes']
-let g:notes_suffix = '.txt'
-let g:notes_list_bullets = ['-', '+']
-" -------------- END NOTES CONFIG---------"
-"
 " --------------- EASY MOTION CONFIG ------------"
 nmap <Leader><leader>f <Plug>(easymotion-overwin-f)
 nmap <Leader><leader>F <Plug>(easymotion-overwin-F)
 nmap <Leader><leader>w <Plug>(easymotion-overwin-w)
+nmap <C-F> <Plug>(easymotion-overwin-w)
 nmap <Leader><leader>W <Plug>(easymotion-overwin-W)
 nmap <Leader><leader>. <Plug>(easymotion-repeat)
 " --------------- END EASY MOTION CONFIG ------------"
@@ -308,5 +280,11 @@ let g:Hexokinase_optInPatterns = [
 \     'hsla',
 \     'colour_names'
 \ ]
-let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript', 'less']
+let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript', 'less', 'scss']
 " --------------- END HEXOKINASE CONFIG ------------"
+
+" --------------- WIKI CONFIG ----------------"
+highlight VimwikiHeader1 guifg=#fabd2f
+highlight VimwikiHeader2 guifg=#b8bb26
+highlight VimwikiHeader3 guifg=#8ec07c
+" --------------- END WIKI CONFIG ----------------"
