@@ -5,7 +5,7 @@
 # nmtui
 
 echo "Downloading general dependencies..."
-sudo pacman -S \
+sudo pacman -S --noconfirm  \
   i3-gaps xorg-server xorg-xinit xorg-xrandr \
   xorg-xbacklight zsh neovim dmenu \
   git termite openssh base-devel \
@@ -13,18 +13,18 @@ sudo pacman -S \
   htop neofetch xf86-video-intel \
   imagemagick rofi xorg-xev bluez \
   bluez-utils i3lock which tree \
-  xorg-xset firefox xclip udisks2 \
+  xorg-xset xclip udisks2 \
   tmux unzip zip nodejs npm \
   v4l-utils
 
 echo "Downloading fonts..."
-sudo pacman -S \
+sudo pacman -S --noconfirm \
   ttf-dejavu noto-fonts ttf-liberation \
   ttf-hack ttf-font-awesome ttf-linux-libertine \
   noto-fonts-emoji font-mathematica ttf-croscore
 
 echo "Downloading Polybar dependencies..."
-sudo pacman -S \
+sudo pacman -S --noconfirm \
   cairo libxcb python xcb-proto \
   xcb-util-image xcb-util-wm xcb-util-cursor \
   xcb-util-xrm alsa-lib libpulse jsoncpp \
@@ -33,39 +33,46 @@ sudo pacman -S \
 echo "Downloading YAY"
 git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si
+yes | makepkg -si
 cd ..
 
 echo "Downloading AUR dependencies"
-yay polybar
-yay ttf-google-fonts-typewolf
-yay ttf-material-design-icons
-yay siji
-yay pamac-aur
-yay python-pip
-yay pywal
-yay flameshot
-yay peek
-yay tty-clock
-yay vim-youcompleteme-git
-yay google-chrome
-yay universal-ctags-git  # dependency for tagbar vim
-yay redshift  # screen warmth
+aur() {
+  echo Installing $1
+  echo 1 | yay --answerclean None --answerdiff None $1
+}
+aur polybar
+aur ttf-google-fonts-typewolf
+aur ttf-material-design-icons
+aur siji
+aur pamac-aur
+aur python-pip
+aur pywal
+aur flameshot
+aur peek
+aur tty-clock
+aur vim-youcompleteme-git
+aur google-chrome
+aur universal-ctags-git  # dependency for tagbar vim
+aur redshift  # screen warmth
 
 echo "Downloading neovim dependencies"
-sudo pacman -S ack ripgrep
+sudo pacman -S --noconfirm ack ripgrep
 sudo pip install --upgrade jedi pynvim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 sudo npm install -g eslint  # Linter for javascript
 
 echo "Downloading dev dependencies"
-sudo pacman -S docker docker-compose postgresql openvpn openconnect
+sudo pacman -S --noconfirm docker docker-compose openconnect
 sudo systemctl start docker && systemctl enable docker
 sudo pip install --upgrade virtualenv
 
 echo "Applying gruvbox color schema"
 wal --theme base16-gruvbox-soft
+
+echo "Applying wallpaper"
+nitrogen --save --set-auto ~/Wallpapers/mountain-png.png
 
 echo "Generating .ssh/ folder"
 ssh-keygen
