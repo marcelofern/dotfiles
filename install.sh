@@ -5,7 +5,7 @@
 # nmtui
 
 echo "Downloading general dependencies..."
-sudo pacman -S --noconfirm  \
+sudo pacman -S --needed --noconfirm  \
   i3-gaps xorg-server xorg-xinit xorg-xrandr \
   xorg-xbacklight zsh neovim dmenu \
   git termite openssh base-devel \
@@ -39,7 +39,7 @@ cd ..
 echo "Downloading AUR dependencies"
 aur() {
   echo Installing $1
-  echo 1 | yay --answerclean None --answerdiff None $1
+  echo 1 | yay --answerclean None --answerdiff None --removemake $1
 }
 aur polybar
 aur pamac-aur
