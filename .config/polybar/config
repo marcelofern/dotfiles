@@ -39,8 +39,8 @@ border-color = ${colors.gray}
 border-size = 1
 font-0 = "Noto Sans:size=11;1"
 font-1 = "siji:pixelsize=15;1"
-;https://cdn.materialdesignicons.com/4.8.95/
-font-2 = "Material Design Icons:size=12;1"
+;kageurufu.net/icons.pdf
+font-2 = "Icons:size=12;1"
 foreground = ${colors.foreground}
 height = 27
 line-size = 0

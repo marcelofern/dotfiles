@@ -45,6 +45,8 @@ sudo pacman -S --noconfirm \
   xcb-util-image xcb-util-wm xcb-util-cursor \
   xcb-util-xrm alsa-lib libpulse jsoncpp \
   libmpdclient curl libnl wireless_tools
+# icons for polybar
+aur ttf-font-icons
 
 echo "Downloading neovim dependencies"
 sudo pacman -S --noconfirm ack ripgrep
