@@ -9,11 +9,5 @@ cp -rf ~/dotfiles/.config ~/.config
 cp -rf ~/dotfiles/.git ~/.git
 cp -rf ~/dotfiles/.gitignore ~/.gitignore
 
-# set the wallpaper
-nitrogen ~/Wallpapers
-
 # set the terminal theme
 wal --theme base16-gruvbox-soft
-
-# create a ~/.ssh folder.
-ssh-keygen
