@@ -20,8 +20,24 @@ sudo pacman -S --needed --noconfirm  \
 
 echo "Downloading fonts..."
 sudo pacman -S --noconfirm \
-  ttf-dejavu noto-fonts noto-fonts-emoji ttf-liberation \
-  ttf-hack ttf-font-awesome
+  ttf-dejavu noto-fonts noto-fonts-emoji
+  # ttf-hack ttf-liberation
+
+echo "Downloading AUR dependencies"
+aur() {
+  echo Installing $1
+  git clone https://aur.archlinux.org/$1.git
+  cd $1
+  yes | makepkg -si
+  cd ..
+  rm -rf $1
+}
+
+aur yay
+aur polybar-git
+aur universal-ctags-git
+# unstable
+# aur vim-youcompleteme-git
 
 echo "Downloading Polybar dependencies..."
 sudo pacman -S --noconfirm \
@@ -29,22 +45,6 @@ sudo pacman -S --noconfirm \
   xcb-util-image xcb-util-wm xcb-util-cursor \
   xcb-util-xrm alsa-lib libpulse jsoncpp \
   libmpdclient curl libnl wireless_tools
-
-echo "Downloading YAY"
-git clone https://aur.archlinux.org/yay.git
-cd yay
-yes | makepkg -si
-cd ..
-
-echo "Downloading AUR dependencies"
-aur() {
-  echo Installing $1
-  echo 1 | yay --answerclean None --answerdiff None --removemake $1
-}
-aur polybar
-# unstable...
-# aur vim-youcompleteme-git
-aur universal-ctags-git  # dependency for tagbar vim
 
 echo "Downloading neovim dependencies"
 sudo pacman -S --noconfirm ack ripgrep
