@@ -11,17 +11,17 @@ sudo pacman -S --noconfirm  \
   git termite openssh base-devel \
   nitrogen alsa-utils pulseaudio \
   htop neofetch xf86-video-intel \
-  imagemagick rofi xorg-xev bluez \
+  imagemagick \ # required for pywal
+  rofi xorg-xev bluez \
   bluez-utils i3lock which tree \
   xorg-xset xclip udisks2 \
   tmux unzip zip nodejs npm \
-  v4l-utils
+  v4l-utils firefox
 
 echo "Downloading fonts..."
 sudo pacman -S --noconfirm \
-  ttf-dejavu noto-fonts ttf-liberation \
-  ttf-hack ttf-font-awesome ttf-linux-libertine \
-  noto-fonts-emoji font-mathematica ttf-croscore
+  ttf-dejavu noto-fonts noto-fonts-emoji ttf-liberation \
+  ttf-hack ttf-font-awesome font-mathematica
 
 echo "Downloading Polybar dependencies..."
 sudo pacman -S --noconfirm \
@@ -42,17 +42,12 @@ aur() {
   echo 1 | yay --answerclean None --answerdiff None $1
 }
 aur polybar
-aur ttf-google-fonts-typewolf
-aur ttf-material-design-icons
-aur siji
 aur pamac-aur
 aur python-pip
-aur pywal
+aur pywal  # a.k.a python-pywal
 aur flameshot
 aur peek
-aur tty-clock
 aur vim-youcompleteme-git
-aur google-chrome
 aur universal-ctags-git  # dependency for tagbar vim
 aur redshift  # screen warmth
 
