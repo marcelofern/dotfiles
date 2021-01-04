@@ -51,7 +51,10 @@ alias audio="pavucontrol"  # To select a sound device when casting
 alias video="qv4l2"  # To set up webcan config
 alias warm="redshift -P &"
 alias pushwiki="cd ~/vimwiki && git add . && git commit && git push -u origin master"
+alias pdf="jfbview"
 
 # The user can override .zshrc_private with some custom things.
 source ~/.zshrc_private
 clear
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

@@ -13,7 +13,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'gmarik/Vundle.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'nvie/vim-flake8'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
@@ -26,6 +25,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/goyo.vim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'vimwiki/vimwiki'
+
+" syntax
+Plug 'dense-analysis/ale'
 
 " All Plugs must be added before the following line
 call plug#end()
@@ -96,7 +98,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " -------------- END FLAGGING UNNECESSARY WHITE SPACE CONFIG --------------
 
 " -------------- START SPELLING AND GRAMMAR CHECK --------------
-nnoremap <F6> :setlocal spell! spelllang=en_us<CR>
+nnoremap <F6> :setlocal spell! spelllang=en_gb<CR>
 " -------------- END SPELLING AND GRAMMAR CHECK --------------
 
 
@@ -168,6 +170,8 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_use_caching = 0
 let g:ctrlp_prompt_mappings = {
   \  'PrtInsert("c")': ['<MiddleMouse>', '<insert>', '<c-v>'] }
+let g:ctrlp_custom_ignore = 'node_modules'
+let g:ctrlp_max_files=0
 "highligh search
 :set hlsearch
 let g:ackhighlight=1
@@ -288,3 +292,7 @@ highlight VimwikiHeader1 guifg=#fabd2f
 highlight VimwikiHeader2 guifg=#b8bb26
 highlight VimwikiHeader3 guifg=#8ec07c
 " --------------- END WIKI CONFIG ----------------"
+"
+" --------------- ALE CONFIG ---------------------"
+let b:ale_linters = {'javascript': ['eslint'], 'python': ['flake8']}
+" --------------- END ALE CONFIG -----------------"
