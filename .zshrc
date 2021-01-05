@@ -58,3 +58,40 @@ source ~/.zshrc_private
 clear
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+aur() {
+  echo Installing $1 from AUR
+  git clone https://aur.archlinux.org/$1.git
+  cd $1
+  yes | makepkg -si
+  cd ..
+  rm -rf $1
+}
+
+update-arch() {
+  # the following script is ZSH language, not BASH!
+  while true; do
+    read -q "choice?Have you read the latest archlinux news? (y/N): "
+    echo '\n'
+    case $choice in
+      [yY]* )
+        echo '[TODO] - Updating mirrors'
+        echo 'Upgrading pacman packages...'
+        sudo pacman -Syu
+        echo 'Updgrading AUR packages'
+        aur_packages=("${(@f)$(pacman -Qqm)}")
+        echo 'Upgrading following AUR packages (this may take a while): \n'
+        echo $aur_packages
+        for package in $aur_packages; do
+          aur $package
+        done
+        echo "DONE, you are all sorted!"
+      ;;
+      [Nn]* )
+        echo '[IMPORTANT] Please read the official site latest news!' 
+        firefox --new-window https://archlinux.org
+        update-arch
+      ;;
+    esac
+  done
+}

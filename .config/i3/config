@@ -103,11 +103,11 @@ floating_modifier $mod
 bindsym $mod+Return exec termite
 
 # start web browser
-bindsym $mod+w exec google-chrome-stable --disable-gpu
+bindsym $mod+w exec firefox
 
 # start rofi
 bindsym $mod+d exec --no-startup-id \
-  "rofi -show drun -font \\"DejaVu 9\\" -theme gruvbox-dark -terminal termite --run-shell-command '{terminal} -e \\" \
+  "rofi -show drun -font \\"mono 10\\" -theme gruvbox-dark -terminal termite --run-shell-command '{terminal} -e \\" \
   {cmd}; read -n 1 -s\\"'"
 
 # START BINDINGS CONFIG

@@ -123,7 +123,7 @@ radius = ${common.radius}
 wm-restack = ${common.wm-restack}
 
 [module/cpu]
-format-prefix =  
+format-prefix = " "
 format-prefix-foreground = ${colors.neutral-green}
 format-underline = #f90000
 interval = 2
@@ -133,7 +133,7 @@ type = internal/cpu
 
 [module/memory]
 interval = 2
-format-prefix =  
+format-prefix = " "
 format-prefix-foreground = ${colors.neutral-red}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -152,7 +152,7 @@ type = internal/fs
 [module/date]
 date =
 date-alt = " %A"
-format-prefix = 
+format-prefix = "  "
 format-prefix-foreground = ${colors.neutral-purple}
 format-underline = #0a6cf5
 interval = 5
@@ -173,27 +173,27 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 format-volume = <label-volume> <bar-volume>
-format-volume-prefix = 
+format-volume-prefix = 
 format-volume-prefix-padding = 1
 format-volume-prefix-foreground = ${colors.neutral-yellow}
 label-volume =  %percentage%%
 label-volume-foreground = ${colors.gray} 
-label-muted = 
+label-muted = " Muted     "
 label-muted-foreground = ${colors.neutral-red}
 type = internal/pulseaudio
 
 [module/battery]
 ; Use the following command to list batteries and adapters:
 ; $ ls -1 /sys/class/power_supply/
-adapter = AC
-animation-charging-0 = 󰋏
-animation-charging-1 = 󰋐
-animation-charging-2 = 󰋑
+adapter = AC0
+animation-charging-0 =  
+animation-charging-1 =  
+animation-charging-2 =  
 animation-charging-foreground = ${colors.neutral-yellow}
 animation-charging-framerate = 750
-animation-discharging-0 = 󰋎
-animation-discharging-1 = 󰋍
-animation-discharging-2 = 󰋌
+animation-discharging-0 =  
+animation-discharging-1 =  
+animation-discharging-2 =  
 animation-discharging-foreground = ${colors.neutral-yellow}
 animation-discharging-framerate = 750
 battery = BAT0
@@ -201,18 +201,15 @@ format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
-format-full-prefix = 
+format-full-prefix = 
 format-full-prefix-foreground = ${colors.neutral-yellow}
 format-full-underline = ${self.format-charging-underline}
 full-at = 98
 label-charging-foreground = ${colors.gray}
 label-discharging-foreground = ${colors.gray}
 label-foreground = ${colors.gray}
-label-full = Full
+label-full = " Full"
 label-full-foreground = ${colors.gray}
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.neutral-yellow}
 type = internal/battery
 
@@ -225,12 +222,12 @@ label = %temperature-c%
 label-foreground = ${colors.gray}
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.neutral-red}
-ramp-0 = 󰃮
-ramp-1 = 󰃮
-ramp-2= 󰃮
-ramp-3= 󰃮
-ramp-4= 󰃮
-ramp-5 = 󰃭
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
 ramp-foreground = ${colors.neutral-orange}
 thermal-zone = 0
 type = internal/temperature
