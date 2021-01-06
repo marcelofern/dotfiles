@@ -291,6 +291,7 @@ let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript', 'less', 'scss']
 highlight VimwikiHeader1 guifg=#fabd2f
 highlight VimwikiHeader2 guifg=#b8bb26
 highlight VimwikiHeader3 guifg=#8ec07c
+let g:vimwiki_list = [{'path': '~/workspace/vimwiki/'}]
 " --------------- END WIKI CONFIG ----------------"
 "
 " --------------- ALE CONFIG ---------------------"

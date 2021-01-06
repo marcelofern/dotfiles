@@ -5,6 +5,7 @@ export ZSH="/home/x/.oh-my-zsh"
 export MANWIDTH=90
 export HISTSIZE=10000
 export SAVEHIST=10000
+export BROWSER=/usr/bin/firefox
 
 ############ - ZSH options - ############
 ZSH_THEME="robbyrussell"
