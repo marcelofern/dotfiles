@@ -83,9 +83,11 @@ update-arch() {
         aur_packages=("${(@f)$(pacman -Qqm)}")
         echo 'Upgrading following AUR packages (this may take a while): \n'
         echo $aur_packages
-        for package in $aur_packages; do
-          aur $package
-        done
+        yay -Syu
+        # alternative way to be used when yay isn't good anymore
+        # for package in $aur_packages; do
+        #  aur $package
+        # done
         echo "DONE, you are all sorted!"
       ;;
       [Nn]* )
