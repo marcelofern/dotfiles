@@ -59,6 +59,8 @@ echo "Downloading dev dependencies"
 sudo pacman -S --noconfirm docker docker-compose openconnect
 sudo systemctl start docker && systemctl enable docker
 sudo pip install --upgrade virtualenv
+# python2 is a dependency for sass-loader used in nuxtJs damn!
+sudo pacman -S python2
 
 echo "Applying gruvbox color schema"
 wal --theme base16-gruvbox-soft
