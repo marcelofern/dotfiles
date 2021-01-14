@@ -9,3 +9,4 @@
 .config/QtProject.conf
 !post-install.sh
 !install.sh
+.config/mimeapps.list

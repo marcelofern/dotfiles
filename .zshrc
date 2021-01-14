@@ -51,7 +51,7 @@ alias svg="feh --conversion-timeout 1"
 alias audio="pavucontrol"  # To select a sound device when casting
 alias video="qv4l2"  # To set up webcan config
 alias warm="redshift -P &"
-alias pushwiki="cd ~/vimwiki && git add . && git commit && git push -u origin master"
+alias pushwiki="cd ~/workspace/vimwiki && git add . && git commit && git push -u origin master"
 alias pdf="jfbview"
 
 # The user can override .zshrc_private with some custom things.
