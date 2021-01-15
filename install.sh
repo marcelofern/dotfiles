@@ -16,7 +16,8 @@ sudo pacman -S --needed --noconfirm  \
   xorg-xset xclip udisks2 \
   tmux unzip zip nodejs npm \
   v4l-utils firefox python-pip \
-  python-pywal flameshot peek redshift
+  python-pywal flameshot peek redshift \
+  zathura zathura-pdf-poppler
 
 echo "Downloading fonts..."
 sudo pacman -S --noconfirm \
