@@ -37,6 +37,7 @@ alias tmuxrc="vim ~/.tmux.conf"
 alias i3rc="vim ~/.config/i3/config"
 alias polybarrc="vim ~/.config/polybar/config"
 alias termiterc="vim ~/.config/termite/config"
+alias newsboatrc="vim ~/.config/newsboat/config"
 alias rofirc="vim ~/.config/rofi/config.rasi"
 alias brightdown="xbacklight -dec 10"
 alias brightup="xbacklight -inc 10"
@@ -53,7 +54,9 @@ alias video="qv4l2"  # To set up webcan config
 alias warm="redshift -P &"
 alias pushwiki="cd ~/workspace/vimwiki && git add . && git commit && git push -u origin master"
 alias pushdocs="cd ~/workspace/documents && git add . && git commit && git push -u origin main"
-alias pdf="jfbview"
+alias errors-last-boot="sudo journalctl -b -1 | vim -"
+alias errors-since-today="sudo journalctl --since=today | vim -"
+alias rss="newsboat"
 
 # The user can override .zshrc_private with some custom things.
 source ~/.zshrc_private
