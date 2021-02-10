@@ -3,3 +3,10 @@ http://newsrss.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml "~BBC F
 
 "---TECH NEWS---"
 https://www.archlinux.org/feeds/news/ "tech"
+
+"---PHILOSOPHY---"
+https://www.logicmatters.net/feed "~Logic that matters" "philosophy"
+http://leiterreports.typepad.com/blog/rss.xml "~Leitter Reports"
+
+"---Linux---"
+https://lukesmith.xyz/rss.xml "~Luke Smith"
