@@ -58,6 +58,7 @@ alias pushdocs="cd ~/workspace/documents && git add . && git commit && git push 
 alias errors-last-boot="sudo journalctl -b -1 | vim -"
 alias errors-since-today="sudo journalctl --since=today | vim -"
 alias rss="newsboat"
+alias calendar="cal -m -y" # dumb one, but I always forget "cal"
 
 # The user can override .zshrc_private with some custom things.
 source ~/.zshrc_private

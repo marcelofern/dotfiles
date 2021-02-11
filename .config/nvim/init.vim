@@ -221,17 +221,18 @@ nnoremap <C-s> :w<CR>
 " -------------- SAVING AND CLOSING CONFIGURATION -------------
 
 
-" -------------- SAVING AND CLOSING CONFIGURATION -------------
+" -------------- TABS SHORTCUTS -------------
 "increase/decrease tabs size"
 map + :vertical resize +2<CR>
 map - :vertical resize -2<CR>
 map _ :vertical resize 85<CR>
-" -------------- END SAVING AND CLOSING CONFIGURATION ------------
+noremap <leader>t :tabnew<CR>
+" -------------- END TABS SHORTCUTS ------------
 
 
-" -------------- COPYING TO CLIPBOARD POSSIBILITY -----------
+" -------------- COPYING TO CLIPBOARD -----------
 set clipboard+=unnamedplus
-" -------------- SAVING AND CLOSING CONFIGURATION ----------
+" -------------- END COPYING TO CLIPBOARD ----------
 
 
 " -------------- GIT COMMAND CONFIG -----------
