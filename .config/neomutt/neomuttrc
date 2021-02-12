@@ -1,0 +1,63 @@
+# Username and password for your Gmail or G Suite account
+set imap_user = "marceelofernandes@gmail.com"
+set imap_pass = ""
+
+# Specifies the default location for my mailboxes
+
+set folder = "imaps://imap.gmail.com:993"
+
+# Configure Simple Mail Transfer Protocol for sending mail
+# would be different if using gsuite
+#set smtp_url = "smtp://marcelo@domain.com@smtp.gmail.com:587"
+set smtp_url = "smtp://marceelofernandes@smtp.gmail.com:587"
+set smtp_pass = ""
+
+# Location of inbox
+set spoolfile = "+INBOX"
+
+# Location of drafts
+set postponed = "+[GMail]/Drafts"
+
+# Activate caching, as it can greatly improve speed
+# Those folders might need to be created beforehand so that it doesn't crash
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+
+# Disable saving outgoing mail since Gmail saves them by default. set record = ""
+set record = ""
+
+# unbinds keys so that they don't override vi bindings
+bind attach,browser,index,pager g noop
+bind attach,browser,index,pager l noop
+bind attach,browser,index,pager k noop
+bind attach,browser,index,pager d noop
+
+# Vi-like keybindings
+bind attach,browser,index       gg  first-entry
+bind attach,browser,index       gg  first-entry
+bind attach,browser,index       G   last-entry
+bind pager                      gg  top
+bind pager                      G   bottom
+
+bind  generic        l select-entry
+bind  index          l display-message
+bind  index          k previous-undeleted
+macro index          h '<change-folder>?'
+bind  index,pager    H display-toggle-weed
+bind  pager          h exit
+bind  pager          j next-line
+bind  pager          k previous-line
+bind  pager          l view-attachments
+bind  attach,compose l view-attach
+bind  attach         h exit
+bind  attach         H display-toggle-weed
+bind  compose        l view-attach
+bind pager,index     dd  delete-message
+bind index           \Cu half-up
+bind pager           \Cu half-up
+bind index           \Cd half-down
+bind pager           \Cd half-down
+
+# Sorting
+set sort     = 'threads'
+set sort_aux = 'reverse-last-date-received'
