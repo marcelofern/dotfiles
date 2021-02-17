@@ -17,7 +17,8 @@ sudo pacman -S --needed --noconfirm  \
   tmux unzip zip nodejs npm \
   v4l-utils firefox python-pip \
   python-pywal flameshot peek redshift \
-  zathura zathura-pdf-poppler
+  zathura zathura-pdf-poppler neomutt \
+  dictd
 
 echo "Downloading fonts..."
 sudo pacman -S --noconfirm \

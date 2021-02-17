@@ -61,6 +61,7 @@ alias rss="newsboat"
 alias calendar="cal -m -y" # dumb one, but I always forget "cal"
 alias mail="neomutt"
 alias neomuttrc="vim ~/.config/neomutt/neomuttrc"
+alias dict="dict -d wn"
 
 # The user can override .zshrc_private with some custom things.
 source ~/.zshrc_private
