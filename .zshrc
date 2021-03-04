@@ -78,6 +78,13 @@ aur() {
   rm -rf $1
 }
 
+update-time() {
+  echo 'Updating system and hardware clock'
+  timedatectl set-timezone "NZ"
+  sudo ntpd -qg
+  sudo hwclock --systohc
+}
+
 update-arch() {
   # the following script is ZSH language, not BASH!
   while true; do
@@ -85,6 +92,7 @@ update-arch() {
     echo '\n'
     case $choice in
       [yY]* )
+        update-time()
         echo '[TODO] - Updating mirrors'
         echo 'Upgrading pacman packages...'
         sudo pacman -Syu

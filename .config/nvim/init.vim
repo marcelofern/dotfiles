@@ -106,13 +106,15 @@ nnoremap <F6> :setlocal spell! spelllang=en_gb<CR>
 
 " -------------- JEDI AUTO COMPLETION (PYTHON) CONFIG --------------
 set omnifunc=jedi#completions
+"removes docstring pop-ups (previews) to avoid delays.
 autocmd FileType python setlocal completeopt-=preview
 let g:jedi#goto_assignments_command = "<F10>"
 let g:jedi#goto_definitions_command = "<F12>"
 let g:jedi#usages_command = "<F9>"
+let g:jedi#show_call_signatures = "1"
+
 let g:jedi#use_tabs_not_buffers = 1
 "let g:jedi#use_splits_not_buffers = "right"
-let g:jedi#show_call_signatures = "1"
 " -------------- END JEDI AUTO COMPLETION (PYTHON) CONFIG -------------
 
 

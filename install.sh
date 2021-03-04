@@ -18,7 +18,7 @@ sudo pacman -S --needed --noconfirm  \
   v4l-utils firefox python-pip \
   python-pywal flameshot peek redshift \
   zathura zathura-pdf-poppler neomutt \
-  dictd
+  dictd ntpd
 
 echo "Downloading fonts..."
 sudo pacman -S --noconfirm \
