@@ -1,14 +1,23 @@
 "---NEWS---"
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml "~NYT Front Page" "news"
+https://www.technologyreview.com/topnews.rss "~MIT IT News" "news"
 
 "---PHILOSOPHY---"
 https://www.logicmatters.net/feed "~Logic that matters" "philosophy"
 http://leiterreports.typepad.com/blog/rss.xml "~Leitter Reports"
 
-"---Linux---"
+"---LINUX---"
 https://www.archlinux.org/feeds/news/ "~Arch news" "linux"
 https://lukesmith.xyz/rss.xml "~Luke Smith" "linux"
 
 "---PYTHON---"
 http://pyfound.blogspot.com/atom.xml "~Python Foundation Blog" "python"
 http://blog.python.org/feeds/posts/default "~Python insider" "python"
+
+"---DDJANGO---"
+https://www.djangoproject.com/rss/weblog "~Django Project" "django"
+
+"---GITHUB TRENDS---"
+https://mshibanami.github.io/GitHubTrendingRSS/weekly/python.xml "~Weekly .py trends github" "python"
+https://mshibanami.github.io/GitHubTrendingRSS/weekly/javascript.xml "~Weekly .js trends github" "javascript"
+https://mshibanami.github.io/GitHubTrendingRSS/weekly/shell.xml "~Weekly .sh trends github" "shell"

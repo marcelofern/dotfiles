@@ -10,3 +10,4 @@
 !post-install.sh
 !install.sh
 .config/mimeapps.list
+.config/pavucontrol.ini
