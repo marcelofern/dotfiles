@@ -14,7 +14,7 @@ https://lukesmith.xyz/rss.xml "~Luke Smith" "linux"
 http://pyfound.blogspot.com/atom.xml "~Python Foundation Blog" "python"
 http://blog.python.org/feeds/posts/default "~Python insider" "python"
 
-"---DDJANGO---"
+"---DJANGO---"
 https://www.djangoproject.com/rss/weblog "~Django Project" "django"
 
 "---GITHUB TRENDS---"
