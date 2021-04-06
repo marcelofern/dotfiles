@@ -44,6 +44,16 @@ exec --no-startup-id xrandr --output HDMI2 --auto
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# Notifications 
+exec_always --no-startup-id dunst # notification server
+exec --no-startup-id echo 'notify-send "TIMER" "8:30am \nfirst coding session"' | at 08:30
+exec --no-startup-id echo 'notify-send "TIMER" "9:30am \nmeeting preparation"' | at 09:30
+exec --no-startup-id echo 'notify-send "TIMER" "10:30am \nsecond coding session"' | at 10:30
+exec --no-startup-id echo 'notify-send "TIMER" "12pm \nlunch break"' | at 12:00
+exec --no-startup-id echo 'notify-send "TIMER" "1pm \nreply to messages"' | at 13:00
+exec --no-startup-id echo 'notify-send "TIMER " "1:45pm \nthird coding session"' | at 13:45
+exec --no-startup-id echo 'notify-send "TIMER" "2:45pm \napp study + architecture"' | at 14:45
+
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 

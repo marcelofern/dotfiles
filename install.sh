@@ -79,3 +79,7 @@ chsh -s $(which zsh) $(whoami)
 
 echo "Downloading oh my zsh"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "Downloading dependencies for notification system"
+sudo pacman -S --needed --noconfirm  dunst libnotify at
+sudo systemctl start atd && systemctl enable atd

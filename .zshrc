@@ -46,6 +46,7 @@ alias wifi="nmtui"
 alias ss="flameshot && flameshot gui"
 alias record="peek"
 alias usb="udisksctl mount -b"  # Mounts an usb: usb /dev/sdb1
+alias format-usb="sudo shred " # format-usb /dev/sdb1
 alias update="source ~/.zshrc"
 alias hdmi="xrandr --output HDMI1 --mode 1920x1080"
 alias mirrors="sudo nvim /etc/pacman.d/mirrorlist"
@@ -63,6 +64,7 @@ alias calendar="cal -m -y" # dumb one, but I always forget "cal"
 alias mail="neomutt"
 alias neomuttrc="vim ~/.config/neomutt/neomuttrc"
 alias dict="dict -d wn"
+alias dunstrc="vim ~/.config/dunst/dunstrc"
 
 # The user can override .zshrc_private with some custom things.
 source ~/.zshrc_private
