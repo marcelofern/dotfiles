@@ -23,7 +23,6 @@ sudo pacman -S --needed --noconfirm  \
 echo "Downloading fonts..."
 sudo pacman -S --noconfirm \
   ttf-dejavu noto-fonts noto-fonts-emoji
-  # ttf-hack ttf-liberation
 
 echo "Downloading AUR dependencies"
 aur() {

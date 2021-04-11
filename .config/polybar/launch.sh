@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Create a gap so that the polybar does not overlap with windows
+i3-msg gaps top all set 50
+
 # Terminate already running bar instances
 killall -q polybar
 

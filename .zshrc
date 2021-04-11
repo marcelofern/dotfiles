@@ -65,6 +65,10 @@ alias mail="neomutt"
 alias neomuttrc="vim ~/.config/neomutt/neomuttrc"
 alias dict="dict -d wn"
 alias dunstrc="vim ~/.config/dunst/dunstrc"
+alias weather="curl wttr.in/"
+alias music="cmus"
+alias torrent="firefox https://www.seedr.cc/"
+
 
 # The user can override .zshrc_private with some custom things.
 source ~/.zshrc_private
@@ -97,6 +101,8 @@ update-arch() {
       [yY]* )
         update-time()
         echo '[TODO] - Updating mirrors'
+        echo 'Synchronizing package databases'
+        sudo pacman -Syy
         echo 'Upgrading pacman packages...'
         sudo pacman -Syu
         echo 'Updgrading AUR packages'
