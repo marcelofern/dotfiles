@@ -40,8 +40,11 @@ alias termiterc="vim ~/.config/termite/config"
 alias newsboatrc="vim ~/.config/newsboat/config"
 alias newsboaturls="vim ~/.config/newsboat/urls"
 alias rofirc="vim ~/.config/rofi/config.rasi"
-alias brightdown="xbacklight -dec 10"
-alias brightup="xbacklight -inc 10"
+alias dunstrc="vim ~/.config/dunst/dunstrc"
+alias neomuttrc="vim ~/.config/neomutt/neomuttrc"
+alias warm="redshift -P -O 4500"
+alias brightdown="warm -b 0.5"
+alias brightup="warm -b 1.0"
 alias wifi="nmtui"
 alias ss="flameshot && flameshot gui"
 alias record="peek"
@@ -53,7 +56,6 @@ alias mirrors="sudo nvim /etc/pacman.d/mirrorlist"
 alias svg="feh --conversion-timeout 1"
 alias audio="pavucontrol-qt"  # To select a sound device when casting
 alias video="qv4l2"  # To set up webcan config
-alias warm="redshift -P -O 4500"
 alias warm-automatic="redshift -P &"
 alias pushwiki="cd ~/workspace/vimwiki && git add . && git commit && git push -u origin master"
 alias pushdocs="cd ~/workspace/documents && git add . && git commit && git push -u origin main"
@@ -62,12 +64,11 @@ alias errors-since-today="sudo journalctl --since=today | vim -"
 alias rss="newsboat"
 alias calendar="cal -m -y" # dumb one, but I always forget "cal"
 alias mail="neomutt"
-alias neomuttrc="vim ~/.config/neomutt/neomuttrc"
 alias dict="dict -d wn"
-alias dunstrc="vim ~/.config/dunst/dunstrc"
 alias weather="curl wttr.in/"
 alias music="cmus"
 alias torrent="firefox https://www.seedr.cc/"
+alias sync-arch="sudo pacman -Syy"
 
 
 # The user can override .zshrc_private with some custom things.
@@ -101,19 +102,8 @@ update-arch() {
       [yY]* )
         update-time()
         echo '[TODO] - Updating mirrors'
-        echo 'Synchronizing package databases'
-        sudo pacman -Syy
-        echo 'Upgrading pacman packages...'
-        sudo pacman -Syu
-        echo 'Updgrading AUR packages'
-        aur_packages=("${(@f)$(pacman -Qqm)}")
-        echo 'Upgrading following AUR packages (this may take a while): \n'
-        echo $aur_packages
-        yay -Syu
-        # alternative way to be used when yay isn't good anymore
-        # for package in $aur_packages; do
-        #  aur $package
-        # done
+        echo 'Updating package list and upgrading all installed repo and AUR'
+        yay -Syu --answerclean None --answerdiff None --answerclean All
         echo "DONE, you are all sorted!"
       ;;
       [Nn]* )

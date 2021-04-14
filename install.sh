@@ -7,7 +7,7 @@
 echo "Downloading general dependencies..."
 sudo pacman -S --needed --noconfirm  \
   i3-gaps xorg-server xorg-xinit xorg-xrandr \
-  xorg-xbacklight zsh neovim dmenu \
+  zsh neovim dmenu \
   git termite openssh base-devel \
   nitrogen alsa-utils pulseaudio \
   htop neofetch xf86-video-intel \
@@ -63,6 +63,10 @@ sudo pip install --upgrade virtualenv
 # python2 is a dependency for sass-loader used in nuxtJs damn!
 sudo pacman -S python2
 
+echo "Downloading dependencies for notification system"
+sudo pacman -S --needed --noconfirm  dunst libnotify at
+sudo systemctl start atd && systemctl enable atd
+
 echo "Applying gruvbox color schema"
 wal --theme base16-gruvbox-soft
 
@@ -78,7 +82,3 @@ chsh -s $(which zsh) $(whoami)
 
 echo "Downloading oh my zsh"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-echo "Downloading dependencies for notification system"
-sudo pacman -S --needed --noconfirm  dunst libnotify at
-sudo systemctl start atd && systemctl enable atd
