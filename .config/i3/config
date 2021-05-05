@@ -48,6 +48,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id dunst # notification server
 exec --no-startup-id echo 'notify-send "TIMER" "8:30am \nfirst coding session"' | at 08:30
 exec --no-startup-id echo 'notify-send "TIMER" "9:30am \nmeeting preparation"' | at 09:30
+exec --no-startup-id echo 'notify-send "TIMER" "10:00\nSU"' | at 10:00
 exec --no-startup-id echo 'notify-send "TIMER" "10:30am \nsecond coding session"' | at 10:30
 exec --no-startup-id echo 'notify-send "TIMER" "12pm \nlunch break"' | at 12:00
 exec --no-startup-id echo 'notify-send "TIMER" "1pm \nreply to messages"' | at 13:00

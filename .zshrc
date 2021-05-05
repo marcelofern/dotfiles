@@ -114,3 +114,34 @@ update-arch() {
     esac
   done
 }
+
+webcam-setup() {
+  cd /dev/
+  sudo mv video0 video0.temp
+  sudo mv video2 video0
+  cd ~
+}
+
+# bluetooth handy commands
+bluetooth-start() {
+  bluetoothctl -- power on
+  bluetoothctl -- agent on
+  bluetoothctl -- default-agent
+}
+bluetooth-scan() {
+  bluetooth-start
+  bluetoothctl -- scan on
+}
+bluetooth-devices() {
+  bluetooth-start
+  bluetoothctl -- devices
+}
+bluetooth-connect() {
+  bluetooth-start
+  bluetoothctl -- trust $1
+  bluetoothctl -- connect $1
+}
+bluetooth-disconnect() {
+  bluetooth-start
+  bluetoothctl -- disconnect $1
+}

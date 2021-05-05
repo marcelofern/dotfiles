@@ -9,7 +9,7 @@ sudo pacman -S --needed --noconfirm  \
   i3-gaps xorg-server xorg-xinit xorg-xrandr \
   zsh neovim dmenu \
   git termite openssh base-devel \
-  nitrogen alsa-utils pulseaudio \
+  nitrogen alsa-utils pulseaudio pulseaudio-bluetooth \
   htop neofetch xf86-video-intel \
   imagemagick rofi xorg-xev bluez \
   bluez-utils i3lock which tree \
@@ -72,6 +72,10 @@ wal --theme base16-gruvbox-soft
 
 echo "Applying wallpaper"
 nitrogen --save --set-auto ~/Wallpapers/mountain-png.png
+
+echo "Enable bluetooth"
+sudo systemctl start bluetooth.service
+sudo systemctl enable bluetooth.service
 
 echo "Generating .ssh/ folder"
 ssh-keygen
