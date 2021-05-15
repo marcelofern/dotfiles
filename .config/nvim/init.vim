@@ -26,7 +26,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'vimwiki/vimwiki'
 Plug 'posva/vim-vue'
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 
 " syntax
 Plug 'dense-analysis/ale'
@@ -105,26 +106,32 @@ nnoremap <F6> :setlocal spell! spelllang=en_gb<CR>
 
 
 " -------------- JEDI AUTO COMPLETION (PYTHON) CONFIG --------------
-set omnifunc=jedi#completions
-"removes docstring pop-ups (previews) to avoid delays.
-autocmd FileType python setlocal completeopt-=preview
-let g:jedi#goto_assignments_command = "<F10>"
-let g:jedi#goto_definitions_command = "<F12>"
-let g:jedi#usages_command = "<F9>"
-let g:jedi#show_call_signatures = "1"
-
-let g:jedi#use_tabs_not_buffers = 1
+"set omnifunc=jedi#completions
+""removes docstring pop-ups (previews) to avoid delays.
+"autocmd FileType python setlocal completeopt-=preview
+"let g:jedi#goto_assignments_command = "<F10>"
+"let g:jedi#goto_definitions_command = "<F12>"
+"let g:jedi#usages_command = "<F9>"
+"let g:jedi#show_call_signatures = "1"
+"
+"let g:jedi#use_tabs_not_buffers = 1
 "let g:jedi#use_splits_not_buffers = "right"
 " -------------- END JEDI AUTO COMPLETION (PYTHON) CONFIG -------------
 
 
-" -------------- YOU COMPLETE ME AUTO COMPLETION (PYTHON) CONFIG --------------
-"let g:ycm_goto_buffer_command = 'vertical-split'
-"nnoremap <F10> :YcmCompleter GoToDeclaration<CR>
-"nnoremap <F12> :YcmCompleter GoToDefinition<CR>
-"nnoremap <F9> :YcmCompleter GoToReferences<CR>
-"let g:ycm_server_keep_logfiles = 1
-"let g:ycm_server_log_level = 'debug'
+" -------------- YOU COMPLETE ME AUTO COMPLETION CONFIG --------------
+" Close preview window after completing the insertion
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Max number of completion suggestions 
+let g:ycm_max_num_candidates = 20
+
+nnoremap <F10> :tab split \| YcmCompleter GoToDeclaration<CR>
+nnoremap <F12> :tab split \| YcmCompleter GoToDefinition<CR>
+nnoremap <F9> :tab split \| YcmCompleter GoToReferences<CR>
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
 " -------------- YOU COMPLETE ME  AUTO COMPLETION (PYTHON) CONFIG --------------
 
 
