@@ -2,7 +2,6 @@
 
 ![](pictures/example_1.png)
 
-
 ## Requirements
 
 This readme does not teach you how to setup Arch linux itself.
