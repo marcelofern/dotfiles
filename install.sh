@@ -11,14 +11,14 @@ sudo pacman -S --needed --noconfirm  \
   git termite openssh base-devel \
   nitrogen alsa-utils pulseaudio pulseaudio-bluetooth \
   htop neofetch xf86-video-intel \
-  imagemagick rofi xorg-xev bluez \
+  rofi xorg-xev bluez \
   bluez-utils i3lock which tree \
   xorg-xset xclip udisks2 \
-  tmux unzip zip nodejs npm \
+  tmux unzip zip \
   v4l-utils firefox python-pip \
-  python-pywal flameshot peek redshift \
+  flameshot peek redshift \
   zathura zathura-pdf-poppler neomutt \
-  dictd ntpd
+  dictd newsboat polybar
 
 echo "Downloading fonts..."
 sudo pacman -S --noconfirm \
@@ -35,19 +35,19 @@ aur() {
 }
 
 aur yay
-aur polybar-git
 aur universal-ctags-git
 # icons for polybar
 aur ttf-font-icons
-# unstable
-# aur vim-youcompleteme-git
+aur vim-youcompleteme-git
+# C gibberish to English
+# aur cdecl
 
 echo "Downloading Polybar dependencies..."
 sudo pacman -S --noconfirm \
   cairo libxcb python xcb-proto \
   xcb-util-image xcb-util-wm xcb-util-cursor \
   xcb-util-xrm alsa-lib libpulse jsoncpp \
-  libmpdclient curl libnl wireless_tools
+  libmpdclient
 
 echo "Downloading neovim dependencies"
 sudo pacman -S --noconfirm ack ripgrep
@@ -76,6 +76,9 @@ nitrogen --save --set-auto ~/Wallpapers/mountain-png.png
 echo "Enable bluetooth"
 sudo systemctl start bluetooth.service
 sudo systemctl enable bluetooth.service
+
+echo "Setting time zone"
+timedatectl set-timezone "NZ"
 
 echo "Generating .ssh/ folder"
 ssh-keygen

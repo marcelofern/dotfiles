@@ -54,14 +54,7 @@ set expandtab
 set textwidth=0 wrapmargin=0
 set colorcolumn=79
 
-"au BufNewFile,BufRead *.py
-    "\ set tabstop=4 |
-    "\ set softtabstop=4 |
-    "\ set shiftwidth=4 |
-    "\ set expandtab |   "convert tabs to spaces
-    "\ set autoindent |
-    "\ set fileformat=unix
-au FileType python
+au FileType python,c
     \ setlocal tabstop=4 |
     \ setlocal softtabstop=4 |
     \ setlocal shiftwidth=4 |
