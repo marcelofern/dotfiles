@@ -34,3 +34,4 @@ $ ./install.sh
 4) polybar
 5) gruv-box theming (via pywal)
 6) rofi
+
