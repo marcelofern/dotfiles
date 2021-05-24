@@ -10,8 +10,8 @@ set $mod Mod4
 font monospace 8
 
 # Xresources var value fallback
-set_from_resource $bg background #19043C
-set_from_resource $fg foreground #F1F1F1
+set_from_resource $bg background #3c3836
+set_from_resource $fg foreground #a89984
 set_from_resource $black color0 #19043C
 set_from_resource $red color1 #EE79A9
 set_from_resource $green color2 #8C9440
@@ -20,17 +20,18 @@ set_from_resource $blue color4 #05C6F1
 set_from_resource $purple color5 #85678F
 set_from_resource $cyan color6 #5E8D87
 set_from_resource $grey color7 #969CD3
+set_from_resource $light_grey color 8 #7c6f64
 
-# class 		bd 	bg 	txt 	ind 	child_bd
-client.focused 		$grey	$bg 	$fg 	$fg 	$fg
-client.unfocused 	$grey 	$bg 	$black 	$bg 	$bg
-client.focused_inactive $grey 	$bg 	$black 	$bg 	$bg
-client.urgent 		$red 	$bg 	$red 	$red 	$red
-client.placeholder 	$grey 	$bg 	$bg 	$bg 	$bg
-client.background 	$bg
+# class                  bd           bg    txt    ind 	  child_bd
+client.focused           $light_grey  $bg   $fg    $fg    $fg
+client.unfocused         $grey        $bg   $black $bg    $bg
+client.focused_inactive  $light_grey  $bg   $black $bg    $bg
+client.urgent            $red         $bg   $red 	 $red   $red
+client.placeholder       $light_grey  $bg   $bg    $bg    $bg
+client.background        $bg
 
 # disable window title
-for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
+for_window [class="^.*"] border pixel 3, title_format "<b> %class >> %title </b>"
 
 # monitors
 set $Mon1 HDMI1
