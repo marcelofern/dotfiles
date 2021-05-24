@@ -8,7 +8,8 @@ export SAVEHIST=10000
 export BROWSER=/usr/bin/firefox
 
 ############ - ZSH options - ############
-ZSH_THEME="robbyrussell"
+ZSH_THEME="arrow"
+#ZSH_THEME="lambda"
 CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
