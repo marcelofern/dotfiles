@@ -45,6 +45,9 @@ exec --no-startup-id xrandr --output HDMI2 --auto
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# picom for transparent windows and shadows
+exec --no-startup-id picom -b
+
 # Notifications 
 exec_always --no-startup-id dunst # notification server
 exec --no-startup-id echo 'notify-send "TIMER" "8:30am \nfirst coding session"' | at 08:30
@@ -69,7 +72,7 @@ gaps inner 15
 gaps outer 5
 
 # back to default gaps
-bindsym $Mod+t gaps inner current set 15; gaps outer current set 15
+bindsym $Mod+t gaps inner current set 15; gaps outer current set 35
 bindsym $Mod+Shift+t gaps inner current set 0; gaps outer current set 0
 
 # change gaps

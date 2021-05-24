@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
 # Create a gap so that the polybar does not overlap with windows
-i3-msg gaps top all set 50
+i3-msg gaps top all set 35
 
 # Terminate already running bar instances
 killall -q polybar
 
 # Launch bar
 echo "---" | tee -a /tmp/polybar.log
-polybar left >> /tmp/polybar-left.log 2>&1 &
-polybar center >> /tmp/polybar-center.log 2>&1 &
-polybar right >> /tmp/polybar-right.log 2>&1 &
+polybar main >> /tmp/polybar-maiin.log 2>&1 &
