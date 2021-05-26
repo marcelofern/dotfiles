@@ -1,11 +1,9 @@
 scriptencoding utf8
 
-
 " Arch defaults
 runtime! archlinux.vim
 
-
-" -------------- CONFIGURATION FOR VUNDLE (pip for vim) AND ITS PLUGINS --------------
+" Start configuration for Vundle and its plugins.
 set nocompatible
 filetype off
 call plug#begin('~/.local/share/nvim/plugged')
@@ -23,28 +21,23 @@ Plug 'lepture/vim-jinja'
 Plug 'majutsushi/tagbar'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/goyo.vim'
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'vimwiki/vimwiki'
 Plug 'posva/vim-vue'
-"Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
-
 " syntax
 Plug 'dense-analysis/ale'
 
-" All Plugs must be added before the following line
 call plug#end()
 filetype plugin indent on
+"------------------------
 
-" -------------- END CONFIGURATION FOR VUNDLE (pip for vim) --------------
 
-
-" -------------- LEADER CONFIG --------------
+" leader config: comma is better than space.
 let mapleader=","
-" -------------- END LEADER CONFIG --------------
+"----------------
 
-
-" -------------- IDENTENTATION CONFIG --------------
+" Indentation.
 set encoding=utf-8
 set softtabstop=2
 set tabstop=2
@@ -61,59 +54,45 @@ au FileType python,c
     \ setlocal expandtab |   "convert tabs to spaces
     \ setlocal autoindent |
     \ setlocal fileformat=unix
-" -------------- END OF IDENTENTATION CONFIG --------------
+"-----------------------------
 
-
-" -------------- CURSOR CONFIG --------------
+" Cursor configuration
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=black
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
-" vertically center doc when inserting
-" autocmd InsertEnter * norm zz
-" -------------- END OF CURSOR HIGHLIGHT CONFIG --------------
+"----------------------------
 
-" -------------- INDENTATION CONFIG ----------------
+" Moving blocks identation, so multiple hits on "<" do what it is intended.
 vmap < <gv
 vmap > >gv
-" -------------- END INDENTATION CONFIG ----------------
+"---------
 
-" -------------- CODE FOLD CONFIG --------------
-" hit the space bar to fold code.
+" Folding code via space bar
 set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
-" -------------- END CODE FOLD CONFIG --------------
+"------------------
 
 
-" -------------- FLAGGING UNNECESSARY WHITE SPACE CONFIG --------------
+" Flaggin unecessary whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-" -------------- END FLAGGING UNNECESSARY WHITE SPACE CONFIG --------------
+"------------------------------------------------------------------
 
-" -------------- START SPELLING AND GRAMMAR CHECK --------------
+" Spell check
 nnoremap <F6> :setlocal spell! spelllang=en_gb<CR>
-" -------------- END SPELLING AND GRAMMAR CHECK --------------
+"-------------------------------------------------
 
 
-" -------------- JEDI AUTO COMPLETION (PYTHON) CONFIG --------------
-"set omnifunc=jedi#completions
-""removes docstring pop-ups (previews) to avoid delays.
-"autocmd FileType python setlocal completeopt-=preview
-"let g:jedi#goto_assignments_command = "<F10>"
-"let g:jedi#goto_definitions_command = "<F12>"
-"let g:jedi#usages_command = "<F9>"
-"let g:jedi#show_call_signatures = "1"
-"
-"let g:jedi#use_tabs_not_buffers = 1
-"let g:jedi#use_splits_not_buffers = "right"
-" -------------- END JEDI AUTO COMPLETION (PYTHON) CONFIG -------------
+" Using jedi for python files only instead of YCM. Definition command is better
+let g:jedi#goto_definitions_command = "<F12>"
+let g:jedi#use_tabs_not_buffers = 1
+" ---------------------------------
 
-
-" -------------- YOU COMPLETE ME AUTO COMPLETION CONFIG --------------
-" Close preview window after completing the insertion
+" YCM (you complete me) configuration.
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
@@ -125,39 +104,31 @@ nnoremap <F12> :tab split \| YcmCompleter GoToDefinition<CR>
 nnoremap <F9> :tab split \| YcmCompleter GoToReferences<CR>
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
-" -------------- YOU COMPLETE ME  AUTO COMPLETION (PYTHON) CONFIG --------------
+"-----------------------------------
 
-
-" -------------- PYTHON SYNTAX AND HIGHLIGHT CONFIG --------------
+" Highlight word "self" in python files.
 autocmd BufReadPost *.py syn match pythonBoolean "\(\W\|^\)\@<=self\(\.\)\@="
-let python_highlight_all=1
-syntax on
-" -------------- END PYTHON SYNTAX AND HIGHLIGHT CONFIG --------------
+"----------------------------------------------------------------------------
 
-
-" -------------- COLOR SCHEMAS --------------
+" Colour scheme
 set termguicolors
 set background=dark
 "set background=light
 let g:gruvbox_contrast_light = 'hard'
 let g:gruvbox_contrast_dark = 'soft'
-let g:gruvbox_italicize_strings=1
 colorscheme gruvbox
-" -------------- END COLOR SCHEMAS --------------
+"------------------
 
-
-" -------------- NERDTREE (FILE BROWSING) CONFIGURATION --------------
+" nerdtree (file browsing) configuration
 let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__']
 map <C-t> :NERDTreeToggle<CR>
 let g:NERDTreeMapOpenSplit = 'h'
 let g:NERDTreeMapOpenVSplit = 'v'
-" -------------- END NERDTREE (FILE BROWSING) CONFIGURATION --------------
+" ------------------------------
 
-
-" -------------- LINE CONFIGURATION --------------
+" line configuration
 set nu
 set relativenumber
-"line commenting commands
 let b:comment_leader = '//'
 autocmd FileType sh,ruby,python,perl   let b:comment_leader = '#'
 autocmd FileType conf,fstab            let b:comment_leader = '#'
@@ -166,10 +137,9 @@ autocmd FileType mail                  let b:comment_leader = '>'
 autocmd FileType vim                   let b:comment_leader = '"'
 noremap <silent> <Leader>cc :<C-B>silent <C-E>s/^\(\s*\)/\1<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> <Leader>cu :<C-B>silent <C-E>s/^\(\s*\)\V<C-R>=escape(b:comment_leader,'\/')<CR>/\1/e<CR>:nohlsearch<CR>
-" -------------- END LINE CONFIGURATION --------------
+"------------------------------------------------------------------------------------------------------------------------
 
-
-" -------------- SEARCH CONFIGURATION --------------
+" Search configuration
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_use_caching = 0
@@ -189,10 +159,9 @@ let g:ackprg = 'rg -S --vimgrep --no-heading'
 let g:ack_mappings = {
       \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
       \ 'gv': '<C-W><CR><C-W>L<C-W>p<C-W>J' }
-" -------------- END SEARCH CONFIGURATION --------------
+"-------------------------------------------
 
-
-" -------------- SPLIT NAVIGATION CONFIGURATION --------------
+" Splits navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -200,106 +169,83 @@ nnoremap <C-H> <C-W><C-H>
 " always split below or right
 set splitbelow
 set splitright
-" -------------- END SPLIT NAVIGATION CONFIGURATION --------------
+"------------
 
-
-" -------------- MOUSE CONFIGURATION --------------
+" Enable mouse.
 set mouse=a
-" -------------- END MOUSE CONFIGURATION --------------
+"----------
 
-
-" -------------- BACKSPACE CONFIGURATION --------------
+" I want to use backspace rather than only "d"
 set backspace=2
-" -------------- END BACKSPACE CONFIGURATION --------------
+"--------------
 
-
-" -------------- PONTUATION LINT CONFIGURATION --------------
+" Pontuation lint
 set showbreak=↪\ 
 set listchars=tab:\|_,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set list
-" -------------- END PONTUATION LINT CONFIGURATION --------------
+"-------
 
-
-" -------------- SAVING AND CLOSING CONFIGURATION --------------
+" Saving and closing hotkeys
 nnoremap <C-w> :q<CR>
 nnoremap <C-s> :w<CR>
-" -------------- SAVING AND CLOSING CONFIGURATION -------------
+"-------------------
 
-
-" -------------- TABS SHORTCUTS -------------
-"increase/decrease tabs size"
+" Resizing
 map + :vertical resize +2<CR>
 map - :vertical resize -2<CR>
 map _ :vertical resize 85<CR>
+"---------------------------
+
+" tabs
 noremap <leader>t :tabnew<CR>
-" -------------- END TABS SHORTCUTS ------------
+"----------------------------
 
-
-" -------------- COPYING TO CLIPBOARD -----------
+" allow copy to clipboard
 set clipboard+=unnamedplus
-" -------------- END COPYING TO CLIPBOARD ----------
+"------------------------
 
-
-" -------------- GIT COMMAND CONFIG -----------
+" git commands
 set updatetime=100
 noremap <Leader>gc :GitGutterUndoHunk<CR>
 noremap <Leader>gn :GitGutterNextHunk<CR>
 noremap <Leader>gp :GitGutterPrevHunk<CR>
 noremap <leader>gb :Gblame<CR>
 noremap <leader>gd :Gdiff<CR>
-" -------------- END GIT COMMAND CONFIG----------
+"----------------------------
 
-
-" -------------- JINJA CONFIG ----------- "
+" jinja config
 au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm,*.jinja,*.jinja2 set ft=jinja
-" -------------- END JINJA CONFIG----------
+"-----------------------------------------------------------------------------
 
-
-" -------------- TAGBAR CONFIG ----------- "
+" tagbar
 noremap <F8> :TagbarToggle<CR>
-" -------------- END TAGBAR CONFIG----------
+"-----------------------------
 
+" debug
+au BufNewFile,BufRead *.py noremap <F1> :normal oimport ipdb; ipdb.set_trace()<ESC>
+au BufNewFile,BufRead *.py noremap <F2> :g/^.*import ipdb; ipdb.set_trace().*/d<CR>
+"----------------------------------------------------------------------------------
 
-" -------------- PYTHON DEBUG CONFIG ----------- "
-noremap <F1> :normal oimport ipdb; ipdb.set_trace()<ESC>
-noremap <F2> :g/^.*import ipdb; ipdb.set_trace().*/d<CR>
-" -------------- END PYTHON DEBUG  CONFIG----------
-
-
-" --------------- EASY MOTION CONFIG ------------"
+" easy motion
 nmap <Leader><leader>f <Plug>(easymotion-overwin-f)
 nmap <Leader><leader>F <Plug>(easymotion-overwin-F)
 nmap <Leader><leader>w <Plug>(easymotion-overwin-w)
 nmap <C-F> <Plug>(easymotion-overwin-w)
 nmap <Leader><leader>W <Plug>(easymotion-overwin-W)
 nmap <Leader><leader>. <Plug>(easymotion-repeat)
-" --------------- END EASY MOTION CONFIG ------------"
+"-----------------------------------------------
 
-" --------------- GOYO CONFIG ------------"
+" goyo (reader)
 noremap <leader>go :Goyo<CR>
-" --------------- END GOYO CONFIG ------------"
+"---------------------------
 
-
-" --------------- HEXOKINASE CONFIG ------------"
-let g:Hexokinase_optInPatterns = [
-\     'full_hex',
-\     'triple_hex',
-\     'rgb',
-\     'rgba',
-\     'hsl',
-\     'hsla',
-\     'colour_names'
-\ ]
-let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript', 'less', 'scss']
-" --------------- END HEXOKINASE CONFIG ------------"
-
-" --------------- WIKI CONFIG ----------------"
+" wiki
 highlight VimwikiHeader1 guifg=#fabd2f
 highlight VimwikiHeader2 guifg=#b8bb26
 highlight VimwikiHeader3 guifg=#8ec07c
 let g:vimwiki_list = [{'path': '~/workspace/vimwiki/'}]
-" --------------- END WIKI CONFIG ----------------"
+"------------------------------------------------------
 "
-" --------------- ALE CONFIG ---------------------"
+" Ale linter, which works for C as well using clang.
 let b:ale_linters = {'javascript': ['eslint'], 'python': ['flake8']}
-" --------------- END ALE CONFIG -----------------"
+"-------------------------------------------------------------------
