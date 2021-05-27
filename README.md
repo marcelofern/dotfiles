@@ -38,3 +38,9 @@ newest changes.
 3) After the installation is completed reboot your system.
 4) You can get into the i3 session by running `startx` in the terminal.
 
+## Using wifi after installation:
+```sh
+sudo systemctl enable NetworkManager
+sudo systemctl start NetworkManager
+nmtui
+```
