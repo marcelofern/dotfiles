@@ -44,6 +44,7 @@ alias newsboaturls="vim ~/.config/newsboat/urls"
 alias rofirc="vim ~/.config/rofi/config.rasi"
 alias dunstrc="vim ~/.config/dunst/dunstrc"
 alias neomuttrc="vim ~/.config/neomutt/neomuttrc"
+alias zathurarc="vim ~/.config/zathura/zathurarc"
 alias warm="redshift -P -O 4500"
 alias brightdown="warm -b 0.5"
 alias brightup="warm -b 1.0"
@@ -71,6 +72,7 @@ alias weather="curl wttr.in/"
 alias music="cmus"
 alias torrent="firefox https://www.seedr.cc/"
 alias sync-arch="sudo pacman -Syy"
+alias arch-debug="cc -g ~/workspace/arch/src/* -o /tmp/arch-d && gdb --args /tmp/arch-d "
 
 
 # The user can override .zshrc_private with some custom things.
