@@ -20,7 +20,6 @@ plugins=(git globalias)
 source $ZSH/oh-my-zsh.sh
 
 ############ - User configuration - ############
-
 export LANG=en_US.UTF-8
 export EDITOR='nvim'
 
@@ -77,59 +76,26 @@ alias memcheck-temp="cc -Wall -Wextra temp.c && valgrind --leak-check=full --sho
 alias debug-temp="cc -g -Wall -Wextra temp.c && gdb ./a.out"
 alias compile-temp="cc temp.c && ./a.out"
 
-
-# The user can override .zshrc_private with some custom things.
-source ~/.zshrc_private
-clear
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-aur() {
-  echo Installing $1 from AUR
-  git clone https://aur.archlinux.org/$1.git
-  cd $1
-  yes | makepkg -si
-  cd ..
-  rm -rf $1
+###### GITHUB REPOS ALIASES ########
+alias mf="cd ~/workspace/marcelofern"
+alias docs="cd ~/workspace/documents"
+function mfpush {
+  cd ~/workspace/marcelofern
+  git add .
+  git commit
+  git push origin master
+  npm run generate
+  cd ~/workspace/marcelofern.github.io/
+  rm -r -f *
+  mv ~/workspace/marcelofern/dist/* .
+  mv ~/workspace/marcelofern/dist/.* .
+  git add .
+  git commit -m "site update"
+  git push origin master
 }
+alias mfpush=mfpush
 
-update-time() {
-  echo 'Updating system and hardware clock'
-  timedatectl set-timezone "NZ"
-  sudo ntpd -qg
-  sudo hwclock --systohc
-}
-
-update-arch() {
-  # the following script is ZSH language, not BASH!
-  while true; do
-    read -q "choice?Have you read the latest archlinux news? (y/N): "
-    echo '\n'
-    case $choice in
-      [yY]* )
-        update-time()
-        echo '[TODO] - Updating mirrors'
-        echo 'Updating package list and upgrading all installed repo and AUR'
-        yay -Syu --answerclean None --answerdiff None --answerclean All
-        echo "DONE, you are all sorted!"
-      ;;
-      [Nn]* )
-        echo '[IMPORTANT] Please read the official site latest news!' 
-        firefox --new-window https://archlinux.org
-        update-arch
-      ;;
-    esac
-  done
-}
-
-webcam-setup() {
-  cd /dev/
-  sudo mv video0 video0.temp
-  sudo mv video2 video0
-  cd ~
-}
-
-# bluetooth handy commands
+########### BLUETOOTH UTILS ########### 
 bluetooth-start() {
   bluetoothctl -- power on
   bluetoothctl -- agent on
