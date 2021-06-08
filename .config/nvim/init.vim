@@ -95,9 +95,10 @@ let g:jedi#use_tabs_not_buffers = 1
 " YCM (you complete me) configuration.
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_filetype_blacklist = {'python': 1}
 
 " Max number of completion suggestions 
-let g:ycm_max_num_candidates = 20
+let g:ycm_max_num_candidates = 5
 
 nnoremap <F10> :tab split \| YcmCompleter GoToDeclaration<CR>
 nnoremap <F12> :tab split \| YcmCompleter GoToDefinition<CR>

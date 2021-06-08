@@ -41,9 +41,15 @@ set $Mon1 HDMI1
 #exec --no-startup-id xrandr --output HDMI1 --auto
 exec --no-startup-id xrandr --output HDMI2 --auto
 
+# Set cursor speed
+exec --no-startup-id xset r rate 300 25
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# Connect bluetooth keyboard
+exec --no-startup-id bluetooth-keyboard
 
 # picom for transparent windows and shadows
 exec --no-startup-id picom -b

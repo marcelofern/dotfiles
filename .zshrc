@@ -73,6 +73,9 @@ alias music="cmus"
 alias torrent="firefox https://www.seedr.cc/"
 alias sync-arch="sudo pacman -Syy"
 alias arch-debug="cc -g ~/workspace/arch/src/* -o /tmp/arch-d && gdb --args /tmp/arch-d "
+alias memcheck-temp="cc -Wall -Wextra temp.c && valgrind --leak-check=full --show-leak-kinds=all ./a.out"
+alias debug-temp="cc -g -Wall -Wextra temp.c && gdb ./a.out"
+alias compile-temp="cc temp.c && ./a.out"
 
 
 # The user can override .zshrc_private with some custom things.
@@ -148,4 +151,12 @@ bluetooth-connect() {
 bluetooth-disconnect() {
   bluetooth-start
   bluetoothctl -- disconnect $1
+}
+
+function bluetooth-keyboard () {
+  bluetooth-connect 70:F0:87:3A:86:D2
+}
+
+function bluetooth-headphone() {
+  bluetooth-connect 14:3F:A6:15:9D:C3
 }
