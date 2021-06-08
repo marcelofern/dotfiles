@@ -24,6 +24,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'posva/vim-vue'
 Plug 'davidhalter/jedi-vim'
+" the below requires cmake to be installed
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 " syntax
 Plug 'dense-analysis/ale'
