@@ -95,6 +95,14 @@ function mfpush {
 }
 alias mfpush=mfpush
 
+function heart {
+  cd ~/workspace/masters/machine_learning/heart
+  source ~/workspace/masters/machine_learning/heart/env_heart/bin/activate
+  pip install ipykernel
+  python -m ipykernel install --user --name=env_heart
+  jupyter notebook
+}
+
 ########### BLUETOOTH UTILS ########### 
 bluetooth-start() {
   bluetoothctl -- power on
@@ -119,10 +127,14 @@ bluetooth-disconnect() {
   bluetoothctl -- disconnect $1
 }
 
-function bluetooth-keyboard () {
+aunction bluetooth-keyboard () {
   bluetooth-connect 70:F0:87:3A:86:D2
 }
 
 function bluetooth-headphone() {
   bluetooth-connect 14:3F:A6:15:9D:C3
+}
+
+function bluetooth-mouse() {
+  bluetooth-connect E0:52:24:93:D4:AE
 }
