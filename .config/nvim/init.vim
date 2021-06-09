@@ -249,5 +249,12 @@ let g:vimwiki_list = [{'path': '~/workspace/vimwiki/'}]
 "------------------------------------------------------
 "
 " Ale linter, which works for C as well using clang.
-let b:ale_linters = {'javascript': ['eslint'], 'python': ['flake8']}
+let b:ale_linters = {
+  \'javascript': ['eslint'],
+  \'python': ['flake8'],
+  \'c': ['cc', 'clangtidy']
+\}
+let g:ale_c_cc_options = '-std=c17 -Wall'
+let g:ale_linters_explicit = 1 "Ale will only run on the list above.
+let g:ale_lint_delay = 500 "milliseconds delay after typing trigger
 "-------------------------------------------------------------------
