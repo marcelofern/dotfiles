@@ -95,9 +95,13 @@ function mfpush {
 }
 alias mfpush=mfpush
 
-function heart {
+function heart-env {
   cd ~/workspace/masters/machine_learning/heart
   source ~/workspace/masters/machine_learning/heart/env_heart/bin/activate
+}
+
+function heart {
+  heart-env
   pip install ipykernel
   python -m ipykernel install --user --name=env_heart
   jupyter notebook
@@ -138,3 +142,5 @@ function bluetooth-headphone() {
 function bluetooth-mouse() {
   bluetooth-connect E0:52:24:93:D4:AE
 }
+export OCTODEV_REPO_PATH=/home/x/workspace/octodev
+alias octodev="inv -f invoke.override.yml --search-root=${OCTODEV_REPO_PATH}"
