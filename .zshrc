@@ -95,9 +95,13 @@ function mfpush {
 }
 alias mfpush=mfpush
 
-function heart {
+function heart-env {
   cd ~/workspace/masters/machine_learning/heart
   source ~/workspace/masters/machine_learning/heart/env_heart/bin/activate
+}
+
+function heart {
+  heart-env
   pip install ipykernel
   python -m ipykernel install --user --name=env_heart
   jupyter notebook
