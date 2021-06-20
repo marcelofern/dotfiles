@@ -138,3 +138,8 @@ function bluetooth-headphone() {
 function bluetooth-mouse() {
   bluetooth-connect E0:52:24:93:D4:AE
 }
+
+########## OCTOPUS STUFF #############
+export OCTODEV_REPO_PATH=/home/x/workspace/octodev
+alias octodev="inv -f ${OCTODEV_REPO_PATH}/invoke.override.yml --search-root=${OCTODEV_REPO_PATH}"
+alias kraken="cd ~/workspace/kraken-core/ && source ~/workspace/env_kraken/bin/activate"

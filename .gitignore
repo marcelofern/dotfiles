@@ -11,3 +11,4 @@
 !install.sh
 .config/mimeapps.list
 .config/pavucontrol.ini
+.config/zoomus.conf
