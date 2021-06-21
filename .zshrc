@@ -75,6 +75,7 @@ alias arch-debug="cc -g ~/workspace/arch/src/* -o /tmp/arch-d && gdb --args /tmp
 alias memcheck-temp="cc -Wall -Wextra temp.c && valgrind --leak-check=full --show-leak-kinds=all ./a.out"
 alias debug-temp="cc -g -Wall -Wextra temp.c && gdb ./a.out"
 alias compile-temp="cc temp.c && ./a.out"
+alias vpn="ss-local -c /etc/shadowsocks-libev/config.json -v"
 
 ###### GITHUB REPOS ALIASES ########
 alias mf="cd ~/workspace/marcelofern"
