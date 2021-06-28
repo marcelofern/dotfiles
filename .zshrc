@@ -148,3 +148,6 @@ function bluetooth-mouse() {
 export OCTODEV_REPO_PATH=/home/x/workspace/octodev
 alias octodev="inv -f ${OCTODEV_REPO_PATH}/invoke.override.yml --search-root=${OCTODEV_REPO_PATH}"
 alias kraken="cd ~/workspace/kraken-core/ && source ~/workspace/env_kraken/bin/activate"
+alias psql-docker="docker exec -it octodev_db_1 psql -U postgres"
+alias debug-api="docker stop octodev_api_1 && INVOKE_CLIENT=origin octodev docker-compose \"run --service-ports api\""
+alias debug-kraken="docker stop octodev_support_1 && INVOKE_CLIENT=origin octodev docker-compose \"run --service-ports support\""

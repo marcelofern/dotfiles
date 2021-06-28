@@ -68,7 +68,7 @@ exec_always --no-startup-id nitrogen --restore
 
 # gaps
 gaps inner 15
-gaps outer 5
+gaps outer 25
 
 # back to default gaps
 bindsym $Mod+t gaps inner current set 15; gaps outer current set 35
