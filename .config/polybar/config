@@ -39,9 +39,9 @@ secondary = #e60053
 background = ${colors.background}
 border-color = ${colors.grey-transparent}
 border-size = 3
-font-0 = "Noto Sans:size=11;1"
+font-0 = "Noto Sans:size=13;1"
 font-1 = "siji:pixelsize=15;1"
-font-2 = "Icons:size=12;1"
+font-2 = "Icons:size=14;3"
 foreground = ${colors.foreground}
 height = 27
 line-size = 0
