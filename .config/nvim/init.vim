@@ -91,12 +91,14 @@ nnoremap <F6> :setlocal spell! spelllang=en_gb<CR>
 " Using jedi for python files only instead of YCM. Definition command is better
 let g:jedi#goto_definitions_command = "<F12>"
 let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#popup_on_dot = 0   "Remove completion as it is very slow.
+let g:jedi#show_call_signatures = "0"  "call signatures can be slow too.
 " ---------------------------------
 
 " YCM (you complete me) configuration.
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_filetype_blacklist = {'python': 1}
+let g:ycm_filetype_blacklist = {'python': 1, 'py': 1}
 
 " Max number of completion suggestions 
 let g:ycm_max_num_candidates = 5

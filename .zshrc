@@ -75,7 +75,7 @@ alias arch-debug="cc -g ~/workspace/arch/src/* -o /tmp/arch-d && gdb --args /tmp
 alias memcheck-temp="cc -Wall -Wextra temp.c && valgrind --leak-check=full --show-leak-kinds=all ./a.out"
 alias debug-temp="cc -g -Wall -Wextra temp.c && gdb ./a.out"
 alias compile-temp="cc temp.c && ./a.out"
-alias vpn="ss-local -c /etc/shadowsocks-libev/config.json -v"
+alias wallpaper="nitrogen --save --set-auto ~/Wallpapers/mountain-png.png"
 
 ###### GITHUB REPOS ALIASES ########
 alias mf="cd ~/workspace/marcelofern"
@@ -144,10 +144,29 @@ function bluetooth-mouse() {
   bluetooth-connect E0:52:24:93:D4:AE
 }
 
+########## GIT TOOLING ############
+function black-diff() {
+  echo $fg_bold[blue] "black on tracked files"
+  black $(git diff --name-only master | grep -E "(.py$)")
+  echo $fg_bold[red] "black on untracked files"
+  black $(git ls-files --others --exclude-standard | grep -E "(.py$)")
+}
+function isort-diff() {
+  echo $fg_bold[blue] "isort on tracked files"
+  isort $(git diff --name-only master | grep -E "(.py$)")
+  echo $fg_bold[red] "isort on untracked files"
+  isort $(git ls-files --others --exclude-standard | grep -E "(.py$)")
+}
+
 ########## OCTOPUS STUFF #############
 export OCTODEV_REPO_PATH=/home/x/workspace/octodev
-alias octodev="inv -f ${OCTODEV_REPO_PATH}/invoke.override.yml --search-root=${OCTODEV_REPO_PATH}"
+export CLIENT=origin
+alias octodev="INVOKE_CLIENT=${CLIENT} inv -f ${OCTODEV_REPO_PATH}/invoke.override.yml --search-root=${OCTODEV_REPO_PATH}"
 alias kraken="cd ~/workspace/kraken-core/ && source ~/workspace/env_kraken/bin/activate"
 alias psql-docker="docker exec -it octodev_db_1 psql -U postgres"
-alias debug-api="docker stop octodev_api_1 && INVOKE_CLIENT=origin octodev docker-compose \"run --service-ports api\""
-alias debug-kraken="docker stop octodev_support_1 && INVOKE_CLIENT=origin octodev docker-compose \"run --service-ports support\""
+alias debug-api="docker stop octodev_api_1 && octodev docker-compose \"run --service-ports api\""
+alias debug-support="docker stop octodev_support_1 && octodev docker-compose \"run --service-ports support\""
+alias debug-kraken="docker stop octodev_support_1 && octodev docker-compose \"run --service-ports support\""
+alias vpn="ss-local -c /etc/shadowsocks-libev/config.json -v"
+alias external-libs="cd /usr/local/lib/python3.8/site-packages"
+alias postman-proxy="hpts -s 127.0.0.1:1080 -p 7951"
