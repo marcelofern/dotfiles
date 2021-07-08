@@ -28,6 +28,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 " syntax
 Plug 'dense-analysis/ale'
+Plug 'nvie/vim-flake8'
 
 call plug#end()
 filetype plugin indent on
